@@ -1,7 +1,16 @@
 /* eslint-disable */
-import '../../common/css/com.less';
+import '@/assets/css/com.less';
 import './index.less';
-import {throttle} from '../../tools/utils';
-console.log(throttle);
 
-console.log('首页的js运行了～～')
+console.log('首页的js运行了111～～');
+
+import Vue from 'vue'
+import App from './App.vue'
+
+new Vue({
+	el: '#app',
+	components: {
+		App
+	},
+	template: '<App/>'
+})
