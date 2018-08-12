@@ -3,7 +3,14 @@ const webpack = require('webpack');
 const autoprefixer = require('autoprefixer');
 const path = require('path')
 const fs = require('fs');
- 
+
+const HappyPack = require('happypack')
+const ProgressBarPlugin = require('progress-bar-webpack-plugin')  //显示打包进度条时间
+const os = require('os')
+const happyThreadPool = HappyPack.ThreadPool({
+	size: os.cpus().length
+})
+
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
@@ -13,10 +20,8 @@ const pageConfig = require('./src/page.config.js');
 var OpenBrowserPlugin = require('open-browser-webpack-plugin'); //webpack 启动后自动打开浏览器
 var BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin; //webpack可视化
 
-var PORT=require("./package.json").myConfig.port
+var PORT = require("./package.json").myConfig.port
 
- 
- 
 const isDev = process.env.NODE_ENV === 'development'
 console.log(isDev)
 
@@ -44,8 +49,9 @@ let webpackConfig = {
 	module: {
 		rules: [{
 				test: /\.js$/,
-				loader: 'babel-loader',
-				include: [resolve('src'), resolve('test'), resolve('node_modules/webpack-dev-server/client')]
+				loader: 'happypack/loader?id=happy-babel-js', // 增加新的HappyPack构建loader
+				include: [resolve('src'), resolve('test'), resolve('node_modules/webpack-dev-server/client')],
+				exclude: /node_modules/
 			},
 			{
 				test: /\.vue$/,
@@ -57,7 +63,10 @@ let webpackConfig = {
 						}),
 						less: ExtractTextPlugin.extract({
 							use: ['css-loader?minimize&sourceMap=false', "less-loader"]
-						})
+						}),
+						stylus: ExtractTextPlugin.extract({
+							use: ['css-loader?minimize&sourceMap=false', "stylus-loader"]
+						}),
 					}
 				}
 			},
@@ -114,6 +123,12 @@ let webpackConfig = {
 					use: ['css-loader?minimize&sourceMap=false', 'less-loader', "postcss-loader"],
 				})
 			},
+			{
+				test: /\.stylus$/,
+				use: ExtractTextPlugin.extract({
+					use: ['css-loader?minimize&sourceMap=false', 'stylus-loader'],
+				})
+			}
 		]
 	},
 
@@ -137,7 +152,15 @@ let webpackConfig = {
 				verbose: true, //开启在控制台输出信息  
 				dry: false //启用删除文件  
 			}
-		)
+		),
+		new HappyPack({
+			id: 'happy-babel-js',
+			loaders: ['babel-loader?cacheDirectory=true'],
+			threadPool: happyThreadPool
+		}),
+		new ProgressBarPlugin({
+			clear: false
+		})
 	],
 	// 起本地服务
 	devServer: {

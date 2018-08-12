@@ -1,8 +1,15 @@
-/* eslint-disable */
-import '@/assets/css/com.less';
-import './contact.less';
-import  '@/assets/js/750rem';
-import {throttle} from '@/assets/js/tools/utils';
-console.log(throttle);
+// The Vue build version to load with the `import` command
+// (runtime-only or standalone) has been set in webpack.base.conf with an alias.
+import Vue from 'vue'
+import App from './App'
+import axios from 'axios'
 
-console.log('22222');
+
+Vue.config.productionTip = false
+
+/* eslint-disable no-new */
+new Vue({
+  el: '#app',
+  template: '<App/>',
+  components: { App }
+})
