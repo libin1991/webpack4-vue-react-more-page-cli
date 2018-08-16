@@ -1,0 +1,5 @@
+javascript函数的new关键字到底是干什么的
+	不用创建临时对象，因为new会帮你做
+	不用绑定原型，因为new会帮你做
+	不用return临时对象，因为new会帮你做
+	不要给原型想名字了，因为new指定名字为prototype
