@@ -1,4 +1,4 @@
-# webpack4-vue-more-page
+﻿# webpack4-vue-more-page
 开箱即用的webpack4，vue，less多页面脚手架
 
 
@@ -148,6 +148,28 @@ module.exports = {
 
 ```
 
+## 开发环境配置webpack可视化
+```
+ var BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+
+configureWebpack: {
+		plugins: [
+			process.env.NODE_ENV === "production"?function(){}:new BundleAnalyzerPlugin()
+		]
+	},
+```
+##  Vue 全局组件
+```
+const requireAll = context => context.keys().map(context);
+
+const component = require.context('./components', false, /\.vue$/);
+
+
+requireAll(component).forEach(({default:item}) => {
+	console.log(item)
+	Vue.component(`wb-${item.name}`, item);
+});
+```
 
 ## 源码部分
 

@@ -1,5 +1,6 @@
-let path = require('path')
+﻿let path = require('path')
 let glob = require('glob')
+ var BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 //配置pages多页面获取当前文件夹下的html和js
 function getEntry(globPath) {
 	let entries = {},
