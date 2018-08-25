@@ -162,7 +162,7 @@ configureWebpack: {
 ```
 const requireAll = context => context.keys().map(context);
 
-const component = require.context('./components', false, /\.vue$/);
+const component = require.context('./components', false, /\.vue$/);   // false 不遍历子目录，true遍历子目录
 
 
 requireAll(component).forEach(({default:item}) => {
