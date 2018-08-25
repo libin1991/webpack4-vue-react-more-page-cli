@@ -1,0 +1,24 @@
+{
+  "name": "webpack-require_context",
+  "version": "0.0.2",
+  "description": "Webpack require context plugin",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gustarus/node-webpack-require_context.git"
+  },
+  "keywords": [
+    "webpack",
+    "context",
+    "require"
+  ],
+  "author": "Pavel Kondratenko",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gustarus/node-webpack-require_context/issues"
+  },
+  "homepage": "https://github.com/gustarus/node-webpack-require_context#readme"
+}

@@ -183,7 +183,7 @@ G:.
         kitten3.jpg
         kitten4.jpg
 ```
-## 加载所有的图片
+## [加载所有的图片](https://github.com/libin1991/webpack4-vue-more-page/blob/e1f91ec42047b9411e976398115a5639f022c362/vue-global-component/src/components/haha.vue)
 ```
 <template>
 	<div id="app">
