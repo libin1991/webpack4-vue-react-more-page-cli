@@ -158,7 +158,7 @@ configureWebpack: {
 		]
 	},
 ```
-##  Vue 全局组件
+##  Vue 全局组件  [require.context](https://juejin.im/post/5ab8bcdb6fb9a028b77acdbd)
 ```
 const requireAll = context => context.keys().map(context);
 
