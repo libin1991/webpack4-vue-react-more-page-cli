@@ -170,6 +170,13 @@ requireAll(component).forEach(({default:item}) => {
 	Vue.component(`wb-${item.name}`, item);
 });
 ```
+## 首字母大写
+```
+Object.keys(components).forEach((key) => {
+    var name = key.replace(/(\w)/, (v) => v.toUpperCase()) //首字母大写
+    Vue.component(`v${name}`, components[key])
+})
+```
 ## 利用require.context遍历目录所有图片
 ```
 G:\Code\Vue\vue-global-component\src\assets>tree /f
