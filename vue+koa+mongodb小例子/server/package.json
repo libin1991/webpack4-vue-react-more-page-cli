@@ -1,0 +1,32 @@
+{
+  "name": "vue_koa_mongodb",
+  "version": "1.0.0",
+  "description": "vue+koa+mongodb 小练习。登录注册，留言",
+  "main": "app.js",
+  "scripts": {
+    "start": "node bin/www",
+    "prd": "pm2 start bin/www",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "debug": "^3.1.0",
+    "gd-bmp": "^1.2.4",
+    "jsonwebtoken": "^8.3.0",
+    "koa": "^2.5.2",
+    "koa-bodyparser": "^4.2.1",
+    "koa-convert": "^1.2.0",
+    "koa-json": "^2.0.2",
+    "koa-logger": "^3.2.0",
+    "koa-onerror": "^4.1.0",
+    "koa-router": "^7.4.0",
+    "koa-static": "^5.0.0",
+    "mongoose": "^5.2.14",
+    "sha1": "^1.1.1",
+    "xss": "^1.0.3"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.4"
+  },
+  "author": "",
+  "license": "ISC"
+}
