@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="dist/slide3D-1.2.1.css" />
+		<style id="stylesheet">
+			html,body{
+				width: 100%;
+				height: 100%;
+			}
+			.slide3D img{
+				width: 100%;
+			}
+			.container3D{
+				background: #eee;
+				margin:10px;
+				float:left;
+			}
+			.title{
+				padding:10px;
+				color:black;
+				font-size:18px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="content">
+			<div class="title">轮番效果：slide、flip、turn、flat、fragment</div>
+			<div class="container3D slide">
+				<div class="wrapper3D">
+					<div class="slide3D">
+						<img src="dist/image-slider-1.jpg" alt="" />
+					</div>
+					<div class="slide3D">
+						<img src="dist/image-slider-2.jpg" alt="" />
+					</div>
+					<div class="slide3D">
+						<img src="dist/image-slider-3.jpg" alt="" />
+					</div>
+					<div class="slide3D">
+						<img src="dist/image-slider-4.jpg" alt="" />
+					</div>
+					<div class="slide3D">
+						<img src="dist/image-slider-5.jpg" alt="" />
+					</div>
+				</div>
+				<div class="slide3D-pagination"></div>
+				<div class="slide3D-prev-button"></div>
+				<div class="slide3D-next-button"></div>
+			</div>
+			<div class="container3D flip">
+				<div class="wrapper3D">
+					
+				</div>
+				<div class="slide3D-pagination"></div>
+				<div class="slide3D-prev-button"></div>
+				<div class="slide3D-next-button"></div>
+			</div>
+			<div class="container3D turn">
+				<div class="wrapper3D">
+					
+				</div>
+				<div class="slide3D-pagination"></div>
+				<div class="slide3D-prev-button"></div>
+				<div class="slide3D-next-button"></div>
+			</div>
+			<div class="container3D flat">
+				<div class="wrapper3D">
+					
+				</div>
+				<div class="slide3D-pagination"></div>
+				<div class="slide3D-prev-button"></div>
+				<div class="slide3D-next-button"></div>
+			</div>
+			<div class="container3D fragment">
+				<div class="wrapper3D">
+					
+				</div>
+				<div class="slide3D-pagination"></div>
+				<div class="slide3D-prev-button"></div>
+				<div class="slide3D-next-button"></div>
+			</div>
+		</div>
+		<script src="dist/slide3D-1.2.1.js"></script>
+		<script id="scripts">
+		    var width = 400;
+		    var height = 178;
+			var mySlide = new Slide3D('.slide', {
+				width: width,
+				height:height,
+				effect: 'slide',
+				paginationClickable: true,
+				pagination: true,  // 是否添加分页器
+				loop:true,  //是否循环，除“slide”外，其他动画默认循环
+				autoplay: 2000,
+				autoplayDisableOnInteraction : false
+			});
+			var mySlide2 = new Slide3D('.flip', {
+				width: width,
+				height:height,
+				effect: 'flip',  // flip | turn | slide | flat | fragment
+				sources: ['dist/image-slider-1.jpg',
+				'dist/image-slider-2.jpg',
+				'dist/image-slider-3.jpg',
+				'dist/image-slider-4.jpg',
+				'dist/image-slider-5.jpg'],
+				box:{
+					rows: 6,  // 切割行
+					cols: 3  // 切割列
+				},
+				pagination: true,  // 是否添加分页器
+				paginationClickable: true,
+				autoplay: 2000,
+				autoplayDisableOnInteraction : false
+			});
+			var mySlide3 = new Slide3D('.turn', {
+				width: width,
+				height:height,
+				effect: 'turn',  // flip | turn | slide | flat | fragment
+				sources: ['dist/image-slider-1.jpg',
+				'dist/image-slider-2.jpg',
+				'dist/image-slider-3.jpg',
+				'dist/image-slider-4.jpg',
+				'dist/image-slider-5.jpg'],
+				box:{
+					rows: 6,  // 切割行
+					cols: 3  // 切割列
+				},
+				pagination: true,  // 是否添加分页器
+				paginationClickable: true,
+				autoplay: 2000
+//				autoplayDisableOnInteraction : false
+			});
+			var mySlide4 = new Slide3D('.flat', {
+				width: width,
+				height:height,
+				effect: 'flat',  // flip | turn | slide | flat | fragment
+				sources: ['dist/image-slider-1.jpg',
+				'dist/image-slider-2.jpg',
+				'dist/image-slider-3.jpg',
+				'dist/image-slider-4.jpg',
+				'dist/image-slider-5.jpg'],
+				box:{
+					rows: 6,  // 切割行
+					cols: 10  // 切割列
+				},
+				pagination: true,  // 是否添加分页器
+				paginationClickable: true,
+				autoplay: 2000,
+				autoplayDisableOnInteraction : false
+			});
+			var mySlide5 = new Slide3D('.fragment', {
+				width: width,
+				height:height,
+				effect: 'fragment',  // flip | turn | slide | flat | fragment
+				sources: ['dist/image-slider-1.jpg',
+				'dist/image-slider-2.jpg',
+				'dist/image-slider-3.jpg',
+				'dist/image-slider-4.jpg',
+				'dist/image-slider-5.jpg'],
+				box:{
+					rows: 6,  // 切割行
+					cols: 3  // 切割列
+				},
+				pagination: true,  // 是否添加分页器
+				paginationClickable: true,
+				autoplay: 2000,
+				autoplayDisableOnInteraction : false
+			});
+		</script>
+	</body>
+</html>
