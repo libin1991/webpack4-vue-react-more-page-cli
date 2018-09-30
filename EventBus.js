@@ -131,7 +131,3 @@ EventEmitter.prototype.emit = function (eventName) {
         });
     }
 }
-作者： LeslieMay
-链接： https: //juejin.im/post/5b7be4ba51882542aa1b3114
-	来源： 掘金
-著作权归作者所有。 商业转载请联系作者获得授权， 非商业转载请注明出处。
