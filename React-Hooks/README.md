@@ -172,9 +172,3 @@ const App =(props)=> {
    
 ```
 
-## 参考
-
-https://juejin.im/post/5be3ea136fb9a049f9121014
-
-## 最后
-请给我一个star 😊
