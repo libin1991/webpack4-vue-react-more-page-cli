@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+
+    <link rel="stylesheet" href="css/basic.css"/>
+
+    <style>
+        .table{
+            width:100%;
+            border-collapse: collapse;
+        }
+        .table td,.table th{
+            border: 1px solid #ccc;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<br/>
+<br/>
+<a href="/add">增加用户</a>
+<br/>
+<br/>
+    <table class="table">
+
+        <tr>
+            <th>姓名</th>
+            <th>年龄</th>
+            <th>性别</th>
+
+            <th>操作</th>
+        </tr>
+
+        {{each list}}
+        <tr>
+            <td>{{$value.username}}</td>
+            <td>{{$value.age}}</td>
+            <td>{{$value.sex}}</td>
+            <td><a href="/edit?id={{@$value._id}}">编辑</a> 　<a href="/delete?id={{@$value._id}}">删除</a></td>
+        </tr>
+        {{/each}}
+
+
+
+    </table>
+</body>
+</html>
