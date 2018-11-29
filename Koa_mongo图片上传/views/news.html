@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+
+		<link rel="stylesheet" href="css/basic.css" />
+		<script src="js/jquery-3.2.1.js"></script>
+	</head>
+
+	<body>
+		
+		<div>
+			<form action="http://localhost:3000/uploadPic" method="post" enctype="multipart/form-data">
+				<input type="file" name="file" id="file" value="" multiple="multiple" />
+				<input type="submit" value="提交" />
+			</form>
+
+		</div>
+		<h2 class="title">这是一个koa-art-template</h2>
+		 
+		<img src="{{list.imgurl}}" alt="" />
+		<div>
+			<button>向页面发送 HTTP POST 请求，并获得返回的结果</button>
+		</div>
+
+		<script>
+			$(document).ready(function() {
+				$("button").click(function() {
+					$.post("http://localhost:3000/getnews?a=100&b=200", {
+							name: "张三",
+							city: "北京"
+						},
+						function(data, status) {
+							console.log(data)
+						});
+				});
+			});
+		</script>
+
+		<h2>绑定数据</h2> {{list.name}}
+
+	</body>
+
+</html>

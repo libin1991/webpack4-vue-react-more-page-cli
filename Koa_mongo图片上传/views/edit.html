@@ -1,0 +1,32 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+
+    <h2>编辑用户</h2>
+
+
+    <form action="/doEdit" method="post">
+
+        用户id:<input type="hidden" name="id" value="{{@list._id}}"/>
+
+        用户名：<input type="text" name="username" value="{{list.username}}"/>
+        <br/>
+        <br/>
+
+        年　龄：<input type="text" name="age" value="{{list.age}}"/>
+
+        <br/>
+        <br/>
+        性别：<input type="text" name="sex" value="{{list.sex}}"/>
+        <br/>
+        <br/>
+
+        <input type="submit" value="提交"/>
+    </form>
+
+</body>
+</html>
