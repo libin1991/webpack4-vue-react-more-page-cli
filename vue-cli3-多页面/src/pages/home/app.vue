@@ -1,22 +1,21 @@
 <template>
 	<div>
-		<img src="../../assets/logo.png"/>
 		<p class="red">{{msg}}</p>
-		<dataNull></dataNull>
+		<Home></Home>
 	</div>
 </template>
 
 <script>
-	import dataNull from '@/components/About.vue'
+	import Home from '@/components/Home.vue'
 	export default {
 		name: 'HelloWorld',
 		data() {
 			return {
-				msg: "page451111"
+				msg: "Home"
 			}
 		},
 		components: {
-			dataNull
+			Home
 		},
 	}
 </script>

@@ -1,23 +1,16 @@
 ﻿let path = require('path')
 let glob = require('glob')
- var BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+let mock = require('./src/mock/index.json');
+var BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 //配置pages多页面获取当前文件夹下的html和js
 function getEntry(globPath) {
-	let entries = {},
-		basename, tmp, pathname, appname;
-
+	let entries = {};
 	glob.sync(globPath).forEach(function(entry) {
-		basename = path.basename(entry, path.extname(entry));
-		// console.log(entry)
-		tmp = entry.split('/').splice(-3);
-		console.log(tmp)
-		pathname = basename; // 正确输出js和html的路径
-
-		// console.log(pathname)
-		entries[pathname] = {
-			entry: 'src/' + tmp[0] + '/' + tmp[1] + '/' + tmp[1] + '.js',
-			template: 'src/' + tmp[0] + '/' + tmp[1] + '/' + tmp[2],
-			filename: tmp[2]
+		var tmp = entry.split('/').splice(-3);
+		entries[tmp[1]] = {
+			entry: 'src/' + tmp[0] + '/' + tmp[1] + '/' + 'index.js',
+			template: 'src/' + tmp[0] + '/' + tmp[1] + '/' + 'index.html',
+			filename: tmp[1]
 		};
 	});
 	return entries;
@@ -29,14 +22,14 @@ console.log(pages)
 
 module.exports = {
 	lintOnSave: false, //禁用eslint
-	baseUrl:process.env.NODE_ENV === "production"?'https://www.baidu.com/':'/',
+	baseUrl: process.env.NODE_ENV === "production" ? 'https://www.baidu.com/' : '/',
 	productionSourceMap: false,
 	pages,
 	devServer: {
-		index: 'page1.html', //默认启动serve 打开page1页面
+		index: '/', //默认启动serve 打开page1页面
 		open: process.platform === 'darwin',
 		host: '',
-		port: 8088,
+		port: 9527,
 		https: false,
 		hotOnly: false,
 		proxy: {
@@ -47,15 +40,18 @@ module.exports = {
 					'^/xrf': ''
 				}
 			},
-			'/wa/': {
-				target: 'http://api.match.hexun.com/',
-				changeOrigin: true,
-				pathRewrite: {
-					'^/wa': ''
-				}
-			}
 		}, // 设置代理
-		before: app => {}
+		before: app => {     //mock数据
+			app.get('/', (req, res, next) => {
+				for(let i in pages){
+					res.write(`<a target="_self" href="/${i}">/${i}</a></br>`);
+				}
+				res.end()
+			});
+			app.get('/goods/list', (req, res, next) => {
+				res.status(299).json(mock)
+			})
+		}
 	},
 	chainWebpack: config => {
 		config.module
@@ -78,11 +74,11 @@ module.exports = {
 		}
 	},
 	configureWebpack: config => {
-//		if(process.env.NODE_ENV === "production") {
-//			config.output = {
-//				path: path.join(__dirname, "./dist"),
-//				filename: "js/[name].[contenthash:8].js"			
-//			};
-//		}
+		//		if(process.env.NODE_ENV === "production") {
+		//			config.output = {
+		//				path: path.join(__dirname, "./dist"),
+		//				filename: "js/[name].[contenthash:8].js"			
+		//			};
+		//		}
 	}
 }

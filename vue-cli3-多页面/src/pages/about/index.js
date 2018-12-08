@@ -1,6 +1,5 @@
 import Vue from 'vue'
-import App from './page2.vue'
-
+import App from './app.vue'
 
 new Vue({
     render: h => h(App)

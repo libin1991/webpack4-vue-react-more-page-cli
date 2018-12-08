@@ -1,21 +1,21 @@
 <template>
 	<div>
 		<p class="red">{{msg}}</p>
-		<dataNull></dataNull>
+		<About></About>
 	</div>
 </template>
 
 <script>
-	import dataNull from '@/components/Home.vue'
+	import About from '@/components/About.vue'
 	export default {
 		name: 'HelloWorld',
 		data() {
 			return {
-				msg: "page451111"
+				msg: "About"
 			}
 		},
 		components: {
-			dataNull
+			About
 		},
 	}
 </script>
