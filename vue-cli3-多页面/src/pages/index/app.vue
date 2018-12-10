@@ -25,11 +25,11 @@
 		mounted(){
 			setTimeout(()=>{
 				this.test=1;
-			},2000)
+			},100)
 		},
 		methods:{
 			clickMe(){
-				this.$http.get("/goods/list").then(data=>{
+				this.$http.get("/mock/goods/list?a=10").then(data=>{
 					console.log(data)
 				})
 			}
