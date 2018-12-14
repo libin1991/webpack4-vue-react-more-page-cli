@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>Document</title>
+	</head>
+
+	<body>
+		<h1>测试页面</h1>
+
+		<button id="closeSocket">断开连接</button>
+		<button id="openSocket">恢复连接</button>
+		<script src="/socket.io/socket.io.js"></script>
+		<script>
+			// 基于 socket.io
+			// 建立连接 默认指向 window.location
+			/*
+			let socket = io('http://127.0.0.1:6788')
+
+			openSocket.onclick = () => {
+				socket.open() // 手动打开socket 也可以重新连接
+			}
+			closeSocket.onclick = () => {
+				socket.close() // 手动关闭客户端对服务器的链接
+			}
+
+			socket.on('connect', () => { // 连接成功
+				// socket.id是唯一标识，在客户端连接到服务器后被设置。
+				console.log(socket.id)
+			})
+
+			socket.on('connect_error', (error) => {
+				console.log('连接错误')
+			})
+			socket.on('disconnect', (timeout) => {
+				console.log('断开连接')
+			})
+			socket.on('reconnect', (timeout) => {
+				console.log('成功重连')
+			})
+			socket.on('reconnecting', (timeout) => {
+				console.log('开始重连')
+			})
+			socket.on('reconnect_error', (timeout) => {
+				console.log('重连错误')
+			})
+
+			// 监听服务端返回事件
+			socket.on('serverEve', (data) => {
+				console.log('serverEve', data)
+			})
+
+			let num = 0
+			setInterval(() => {
+				// 向服务端发送事件
+				socket.emit('feEve', ++num)
+			}, 3000)
+            */
+			// 基于 ws
+			 
+			let num = 0
+			let ws = new WebSocket('ws://127.0.0.1:6788')
+			ws.onopen = (evt) => {
+			  console.log('连接成功')
+			  setInterval(() => {
+			    ws.send(++ num)  // 向服务器发送数据
+			  }, 1000)
+			}
+			ws.onmessage = (evt) => {
+			  console.log('收到服务端数据', evt.data)
+			}
+			ws.onclose = (evt) => {
+			  console.log('关闭')
+			}
+			ws.onerror = (evt) => {
+			  console.log('错误')
+			}
+			closeSocket.onclick = () => {
+			  ws.close()  // 断开连接
+			}
+			 
+		</script>
+	</body>
+
+</html>

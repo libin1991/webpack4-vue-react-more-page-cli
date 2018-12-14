@@ -1,0 +1,220 @@
+.message-wrap
+  display: flex
+  flex-direction: column
+  .top
+    display: flex
+    height: 50px
+    border-bottom: 1px solid #d6d6d6
+    justify-content: center
+    align-items: center
+    .btn
+      font-size: 12px
+      width: 90px
+      height: 22px
+      text-align: center
+      line-height: 22px
+      border: 1px solid #d6d6d6
+      color: #555
+      &[data-now=true]
+        border: 1px solid #2bb8aa
+        background: #2bb8aa
+        color: #fff
+    .group
+      cursor: pointer
+      padding-left: 10px
+      border-radius: 20px 0 0 20px
+      margin-right: 1px
+      position: relative
+      &[data-new=true]::before
+        content: attr(data-message)
+        height: 14px
+        width: 18px
+        line-height: 14px
+        background: #de1616
+        border-radius: 10px
+        position: absolute
+        left: 10px
+        top: 0
+        bottom: 0
+        color: #fafafa
+        margin: auto 0
+    .member
+      cursor: pointer
+      padding-right: 10px
+      border-radius: 0 20px 20px 0
+  .list
+    height: 200px
+    flex: 1
+    border-bottom: 1px solid #d6d6d6  
+    padding: 20px
+    overflow-y: auto
+    .item
+      display: flex
+      padding-right: 52px
+      margin-bottom: 16px
+      .portrait
+        width: 38px
+        height: 38px
+        border-radius: 2px
+      .text
+        background-color: #b2e281
+        border-radius: 5px
+        padding: 9px
+        margin-left: 12px
+        word-break: break-all
+        position: relative
+        .emoticon
+          max-width: 100px
+          max-height: 100px
+          border-radius: 5px
+          display: block
+        .arrow
+          content: ''
+          position: absolute
+          border: 8px solid transparent
+          border-right-color:  #b2e281
+          top: 12px
+          left: -15px          
+      &[data-me=true]
+        padding-right: 0
+        padding-left: 52px
+        justify-content: flex-end
+        .portrait
+          order: 1
+        .text
+          margin-left: 0
+          margin-right: 12px
+          .arrow
+            border-left-color: #b2e281
+            border-right-color: transparent
+            right: -15px
+            left: auto
+  .edit
+    height: 180px
+    .tool-bar
+      position: relative
+      padding: 3px 0 6px 0
+      height: 30px
+      &::after
+        content: ''
+        display: none
+        position: absolute
+        left: 17px
+        bottom: 33px
+        border: 10px solid transparent
+        border-top-color: #fff
+      .emoticon
+        float: left
+        margin: 0 12px 0 12px
+        display: inline-block
+        width: 30px
+        height: 30px
+        background: url(../images/bq2bb8aa.png) no-repeat center
+        background-size: 20px 20px
+        cursor: pointer
+      .packet
+        float: left
+        display: inline-block
+        width: 30px
+        height: 30px
+        background: url(../images/hb2bb8aa.png) no-repeat center
+        background-size: 20px 20px
+        cursor: pointer
+      .emoticon-wrap
+        display: none
+        width: 560px
+        height: 270px        
+        position: absolute
+        background: #fff
+        left: 12px
+        bottom: 52px
+        border-radius: 3px
+        overflow: hidden
+        box-shadow: #999 0 2px 10px
+        cursor: pointer
+        .item:nth-of-type(1),.item:nth-of-type(2),.item:nth-of-type(3),.item:nth-of-type(4),.item:nth-of-type(5),.item:nth-of-type(6),.item:nth-of-type(7)
+          border-top: 0
+        .item:nth-of-type(1),.item:nth-of-type(8),.item:nth-of-type(15)
+          border-left: 0
+        .item:nth-of-type(20)
+          display: none
+        .item
+          width: 80px
+          height: 90px
+          overflow: hidden
+          float: left
+          position: relative
+          border: 1px solid #f5f5f5
+          box-sizing: border-box
+          border-right: 0
+          border-bottom: 0
+          .img
+            position: absolute
+            left: 0
+            right: 0
+            top: 0
+            bottom: 0
+            margin: auto
+            max-width: 80%
+            max-height: 80%
+            &:hover
+              transition: transform 0.1s ease 0s
+              transform: scale(1.08, 1.08)
+        .upload
+          width: 80px
+          height: 90px
+          float: left
+          border-top: 1px solid #f5f5f5
+          border-left: 1px solid #f5f5f5
+          box-sizing: border-box
+          background: url(../images/add.png) no-repeat center
+          background-size: 18px 18px
+          &:hover
+            background-size: 20px 20px
+      .packet-wrap
+        display: none
+        position: absolute
+        width: 250px
+        background: #fff
+        left: 12px
+        bottom: 52px
+        border-radius: 3px
+        box-shadow: #999 0 2px 10px
+        cursor: pointer
+        &::after
+          content: ''
+          position: absolute
+          left: 46px
+          bottom: -18px
+          border: 10px solid transparent
+          border-top-color: #fff
+        img
+          width: 250px
+    .emoticon-show
+      .emoticon-wrap
+        display: block
+      &::after
+        display: inline-block
+    .inp
+      font-size: 14px
+      height: 80px
+      padding: 0px 16px 0 16px 
+      outline: none
+      overflow-y: auto
+    .btn
+      text-align: right
+      padding: 10px 20px 0 0
+      span
+        font-size: 14px
+        color: #9E9E9E
+        line-height: 30px
+        padding-right: 10px
+      .send-message
+        width: 90px
+        height: 30px
+        background: #ffffff
+        border: 1px solid #c1c1c1
+        color: #222222
+        outline: none
+        border-radius: 5px
+        line-height: 30px

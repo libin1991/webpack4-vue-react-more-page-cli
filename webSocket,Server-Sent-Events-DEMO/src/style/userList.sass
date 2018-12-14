@@ -1,0 +1,78 @@
+.user-list-wrap
+  display: flex
+  flex-direction: column
+  .my-info
+    flex-shrink: 0
+    flex-grow: 0
+    flex-basis: 50px
+    height: 50px
+    display: flex
+    padding: 20px 0 16px 20px
+    border-bottom: 1px solid #2d2d2d
+    .portrait
+      width: 50px
+      height: 50px
+      border-radius: 2px
+    .name
+      color: #fff
+      font-size: 18px
+      padding-left: 10px
+      width: 130px
+      overflow: hidden
+      text-overflow: ellipsis
+      white-space: nowrap
+    .logo
+      color: #ccc
+      font-size: 18px
+      padding-left: 10px
+  .user-list
+    flex-grow: 1
+    overflow-y: auto
+    .item
+      display: flex
+      padding: 12px 18px
+      border-bottom: 1px solid #3c3c3c
+      cursor: pointer
+      &[data-now=true]
+        background: rgba(39, 39, 39, 0.5)
+      &[data-new=true] .item-name
+        &::after
+          content: attr(data-message)
+          height: 14px
+          padding: 0 8px
+          float: right
+          border-radius: 10px
+          background: #de1616
+          font-size: 12px
+          text-align: center
+          line-height: 14px
+          color: #fafafa
+      .item-por
+        border-radius: 2px
+        width: 42px
+        height: 42px
+      .item-info
+        padding: 4px 0 0 10px
+        display: flex
+        flex-direction: column
+        justify-content: space-between
+        line-height: 16px
+        flex: 1
+        .item-name
+          height: 16px
+          span
+            display: inline-block
+            width: 130px
+            height: 16px
+            color: #fafafa
+            overflow: hidden
+            text-overflow: ellipsis
+            white-space: nowrap
+        .item-text
+          font-size: 12px
+          height: 14px
+          width: 168px
+          overflow: hidden
+          text-overflow: ellipsis
+          white-space: nowrap
+          color: #aaa

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1, maximum-scale=1, user-scalable=no" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<link rel="icon" href="../dist/assets/manifest/ioc_96.png">
+		<link rel="manifest" href="./assets/manifest/manifest.json">
+		<title>简言</title>
+	</head>
+
+	<body>
+		<!-- 本页面全部注释均不可随意删除因为webpack打包会过滤无效css用注释使未来元素样式正常打包 -->
+		<div id="login-wrap">
+			<div class="title">欢迎来到简言</div>
+			<div class="user-name contenteditable" contenteditable></div>
+			<div class="user-portrait">
+				<span class="tips">请选择一张图片作为头像</span>
+				<img class="my-por">
+			</div>
+			<div class="select"></div>
+			<button class="chat-btn">开始简言</button>
+		</div>
+		<div id="chat-wrap">
+			<div class="user-list-wrap">
+				<div class="my-info">
+					<img class="portrait">
+					<div>
+						<p class="name"></p>
+						<p class="logo">You Chat V2.0</p>
+					</div>
+				</div>
+				<div class="user-list">
+					<!-- <div class="item">
+          <img class="item-por">
+          <div class="item-info">
+            <p class="item-name">面面</p>
+            <p class="item-text">hello,word.</p>
+          </div>
+        </div> -->
+				</div>
+			</div>
+			<div class="message-wrap" data-blur="false">
+				<div class="top">
+					<i class="open"></i>
+					<div class="btn group" data-now="true">群聊</div>
+					<div class="btn member">成员</div>
+				</div>
+				<div class="list">
+					<!-- <div class="item">
+          <img class="portrait">
+          <div class="text">
+            <p>面面</p>
+            <img class="emoticon">
+            <i class="arrow"></i>
+          </div>
+        </div> -->
+				</div>
+				<div class="edit">
+					<!-- <div class="emoticon-show">误删</div> -->
+					<div class="tool-bar">
+						<span class="emoticon"></span>
+						<div class="emoticon-wrap">
+							<!-- <div class="upload">误删</div> -->
+						</div>
+					</div>
+					<div class="inp" contenteditable></div>
+					<div class="btn">
+						<span>按下Enter发送消息</span>
+						<button class="send-message">发 送</button>
+					</div>
+				</div>
+			</div>
+			<div class="mask"></div>
+		</div>
+		<input type="file" id="file" accept="image/*" style="display:none">
+		<script src="/socket.io/socket.io.js"></script>
+	</body>
+
+</html>

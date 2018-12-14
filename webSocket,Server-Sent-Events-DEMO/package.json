@@ -1,0 +1,38 @@
+{
+  "name": "you_chat",
+  "version": "1.0.0",
+  "description": "基于webSocket的web通信",
+  "main": "index.js",
+  "scripts": {
+    "test": "nodemon –-debug-brk server.js",
+    "dev": "nodemon --inspect   server.js"
+  },
+  "keywords": [
+    "webSocket",
+    "you_chat"
+  ],
+  "author": "chuanzhang",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^9.3.1",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-preset-env": "^1.7.0",
+    "css-loader": "^1.0.1",
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
+    "file-loader": "^2.0.0",
+    "html-webpack-plugin": "^3.2.0",
+    "html-withimg-loader": "^0.1.16",
+    "node-sass": "^4.10.0",
+    "postcss-loader": "^3.0.0",
+    "purify-css": "^1.2.5",
+    "purifycss-webpack": "^0.7.0",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1",
+    "url-loader": "^1.1.2"
+  },
+  "dependencies": {
+    "express": "^4.16.4",
+    "socket.io": "^2.1.1"
+  }
+}

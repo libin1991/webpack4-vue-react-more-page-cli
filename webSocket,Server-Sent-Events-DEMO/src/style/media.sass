@@ -1,0 +1,83 @@
+@media screen and (max-width: 700px)
+  #login-wrap
+    width: 300px
+    height: 426px
+    .select .por
+      width: 42px
+      height: 42px
+    .user-portrait 
+      padding: 38px 0 6px 2px
+      .my-por
+        width: 42px
+        height: 42px
+    .select
+      padding-top: 18px
+    .chat-btn
+      margin-top: 30px
+  #chat-wrap .user-list-wrap
+    position: absolute
+    top: 0
+    left: -260px
+    z-index: 2
+    transition: left 0.2s ease 0s
+  #chat-wrap .message-wrap
+    width: 100% !important
+    &[data-blur=true]
+      .top,.list,.edit input,.edit .btn,.edit .tool-bar .emoticon,.edit .tool-bar .packet
+        filter: blur(3px)
+    .top .open
+      width: 20px
+      height: 38px
+      position: absolute
+      left: 12px
+      top: 6px
+      background: url(../images/open.png) no-repeat center
+      background-size: 20px 20px
+    .edit 
+      height: 136px
+      .inp
+        height: 42px
+      .emoticon-show .emoticon-wrap
+        padding: 6px
+        box-sizing: border-box
+        left: 0
+        bottom: 0
+        position: fixed
+        z-index: 5
+        width: 100%
+        height: auto
+        display: flex
+        flex-wrap: wrap
+        .item:nth-of-type(20)
+          display: none
+        .item
+          border: 0
+          flex-grow: 1
+          .img
+            max-width: 70%
+            max-height: 70%            
+        .upload
+          border: 0
+          flex-grow: 1
+      .packet-wrap
+        position: fixed
+        width: 100%
+        height: 100%
+        background: #fff
+        left: 0
+        top: 0
+        img
+          position: absolute
+          top: 0
+          bottom: 0
+          left: 0
+          right: 0
+          margin: auto
+  .mask
+    position: absolute
+    width: 100%
+    height: 100%
+    left: 0
+    top: 0
+    background: rgba(0,0,0,.38)
+    z-index: 1
