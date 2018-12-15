@@ -1,0 +1,13 @@
+
+.*
+*.md
+*.yml
+build/
+node_modules/
+src/
+test/
+gulpfile.js
+static/
+docs/
+config/
+index.html

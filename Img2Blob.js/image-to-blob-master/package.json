@@ -1,0 +1,36 @@
+{
+  "name": "image-to-blob",
+  "version": "0.2.0",
+  "description": "a small util to convert image urls to blobs",
+  "main": "index.js",
+  "scripts": {
+    "test": "jshint ./index.js && browserify test/*.js | tape-run -b firefox -s `pwd`",
+    "build": "gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jcblw/image-to-blob"
+  },
+  "keywords": [],
+  "author": "Jacob Lowe",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jcblw/image-to-blob/issues"
+  },
+  "homepage": "https://github.com/jcblw/image-to-blob",
+  "devDependencies": {
+    "browserify": "^14.3.0",
+    "faucet": "0.0.1",
+    "gulp": "^3.8.10",
+    "gulp-browserify": "^0.5.0",
+    "gulp-debug": "^3.1.0",
+    "gulp-rename": "^1.2.0",
+    "gulp-uglify": "^3.0.0",
+    "jshint": "^2.5.10",
+    "tape": "^4.6.3",
+    "tape-run": "jcblw/tape-run"
+  },
+  "dependencies": {
+    "image-to-data-uri": "jcblw/image-to-data-uri.js"
+  }
+}

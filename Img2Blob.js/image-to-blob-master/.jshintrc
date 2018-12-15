@@ -1,0 +1,12 @@
+{
+    "node": true,
+    "browser": true,
+    "undef": true,
+    "unused": true,
+    "esnext": true,
+    "predef": [ "require", "module" ],
+    "globalstrict": true,
+    "trailing": true,
+    "-W097": true
+}
+
