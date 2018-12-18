@@ -4,6 +4,16 @@
 ### 开箱即用的webpack4，vue，less多页面脚手架
 ### [Vue-cli@3.0 插件系统简析](https://juejin.im/post/5b8f586c5188255c9d55eedf)
 
+```
+export default {
+	member: 'group',
+	groupMessageList: [],
+	setData(key, value) {
+		this[key] = value
+	}
+}
+```
+
 ## 前言
 
 vue-cli是Vue.js官方推出的脚手架，它功能丰富、扩展性强，为Vue应用开发带来了极大的便捷，它提供了多种开发范式，诠释了开箱即用。vue-cli@3版本经历了alpha、beta、rc版本近7个月的迭代开发，在最近几天正式版终于发布，本文主要讲解如何使用vue-cli创建一个多入口工程，若要近一步了解vue-cli，请访问[官方文档](https://cli.vuejs.org/guide/)。
