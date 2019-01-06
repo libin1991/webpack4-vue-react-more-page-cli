@@ -1,0 +1,14 @@
+{
+  "name": "webpack-loader-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "loader.js",
+  "scripts": {
+    "dev": "webpack"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "webpack-core": "^0.5.0"
+  }
+}
