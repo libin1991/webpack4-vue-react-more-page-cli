@@ -1,0 +1,72 @@
+{
+  "name": "vue-active-preview",
+  "version": "0.1.8",
+  "license": "MIT",
+  "author": {
+    "name": "kother1",
+    "email": "kother@foxmail.com",
+    "url": "https://github.com/accforgit"
+  },
+  "bugs": {
+    "url": "https://github.com/accforgit/vue-active-preview/issues"
+  },
+  "description": "A PhotoSwipe Image Preview component for Vue",
+  "main": "dist/VueActivePreview.umd.min.js",
+  "keywords": [
+    "vue-active-preview",
+    "vue active preview",
+    "photoSwipe", 
+    "preview",
+    "carousel",
+    "vue-photoSwipe",
+    "vue-preview",
+    "vue carousel"
+  ],
+  "private": false,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint",
+    "lib": "vue-cli-service build --target lib --name VueActivePreview src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/accforgit/vue-active-preview.git"
+  },
+  "dependencies": {
+    "vue": "^2.5.21"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^3.2.0",
+    "@vue/cli-plugin-eslint": "^3.2.0",
+    "@vue/cli-service": "^3.2.0",
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.8.0",
+    "eslint-plugin-vue": "^5.0.0",
+    "vue-template-compiler": "^2.5.21"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/essential",
+      "eslint:recommended"
+    ],
+    "rules": {},
+    "parserOptions": {
+      "parser": "babel-eslint"
+    }
+  },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {}
+    }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
+  ]
+}
