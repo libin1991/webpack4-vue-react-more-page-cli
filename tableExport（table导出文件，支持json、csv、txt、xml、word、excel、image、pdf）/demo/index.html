@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+	<meta charset="UTF-8">
+	<title>table export</title>
+</head>
+
+<body>
+	<table id="table1">
+		<tbody>
+			<tr>
+				<td>文字</td>
+				<td>咨询</td>
+				<td>测试</td>
+			</tr>
+			<tr>
+				<td>文字</td>
+				<td>咨询</td>
+				<td>测试</td>
+			</tr>
+			<tr>
+				<td>文字</td>
+				<td>咨询</td>
+				<td>测试</td>
+			</tr>
+			<tr>
+				<td>文字</td>
+				<td>咨询</td>
+				<td>测试</td>
+			</tr>
+			<tr>
+				<td>文字</td>
+				<td>咨询</td>
+				<td>测试</td>
+			</tr>
+			<tr>
+				<td>文字</td>
+				<td>咨询</td>
+				<td>测试</td>
+			</tr>
+		</tbody>
+	</table>
+	<table id="table2" width="500px">
+		<thead>
+			<tr>
+				<th>标题一</th>
+				<th>标题二</th>
+				<th>标题三</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td><a href="http://w3cboy.com" target="_blank">文字</a></td>
+				<td>咨询</td>
+				<td>测试</td>
+			</tr>
+			<tr>
+				<td><a href="http://w3cboy.com" target="_blank">文字</a></td>
+				<td>咨询</td>
+				<td>121223243444444466778676555454434</td>
+			</tr>
+			<tr>
+				<td><a href="http://w3cboy.com" target="_blank">文字</a></td>
+				<td>咨询</td>
+				<td>12,122</td>
+			</tr>
+			<tr>
+				<td><a href="http://w3cboy.com" target="_blank">文字</a></td>
+				<td>咨询</td>
+				<td>测试</td>
+			</tr>
+			<tr>
+				<td><a href="http://w3cboy.com" target="_blank">文字</a></td>
+				<td>咨询</td>
+				<td>测试</td>
+			</tr>
+			<tr>
+				<td><a href="http://w3cboy.com" target="_blank">文字</a></td>
+				<td>咨询</td>
+				<td>测试</td>
+			</tr>
+		</tbody>
+	</table>
+    <table id="table3" width="500px">
+		<thead>
+			<tr>
+				<th>author</th>
+				<th>keywords</th>
+				<th>description</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td><a href="http://w3cboy.com" target="_blank">bukas</a></td>
+				<td>javascript</td>
+				<td>hello world</td>			
+			</tr>
+		</tbody>
+	</table>
+	<div id="export">
+		<a data-type="json" href="javascript:;">导出json</a>
+		<a data-type="txt" href="javascript:;">导出txt</a>
+		<a data-type="csv" href="javascript:;">导出csv</a>
+		<a data-type="xml" href="javascript:;">导出xml</a>
+		<a data-type="xls" href="javascript:;">导出excel</a>
+		<a data-type="doc" href="javascript:;">导出word</a>
+		<a data-type="image" href="javascript:;">导出图片</a>
+		<a data-type="pdf" href="javascript:;">导出pdf</a>
+	</div>
+	<script src="tableExport.js"></script>
+	<script>
+		var $exportLink = document.getElementById('export');
+		$exportLink.addEventListener('click', function(e) {
+			e.preventDefault();
+			if (e.target.nodeName === "A") {
+			    tableExport('table2', 'test', e.target.getAttribute('data-type'));
+			}
+		}, false);
+	</script>
+</body>
+
+</html>
