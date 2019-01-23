@@ -1,0 +1,30 @@
+.container{ 
+    width: 1000px; 
+    margin: 10px auto; 
+    background: #e8e8e8; 
+    height: 500px; 
+    border-radius: 5px; 
+    border: 3px solid #ddd; 
+    position: relative; 
+    overflow: hidden;
+}
+.menu-bar{ 
+    width: 1000px; 
+    margin: 0px auto; 
+    text-align: center;
+}
+.btn{ 
+    padding: 5px 20px; 
+    display: inline-block; 
+    border-radius: 5px; 
+    border: 1px solid #e0e0e0; 
+    margin: 15px; 
+    background: #37a; 
+    color: #fff; 
+    cursor: pointer;
+}
+#bullet-text{	
+    width: 280px; 
+    font-size: 18px;	
+    padding-left: 20px;
+}
