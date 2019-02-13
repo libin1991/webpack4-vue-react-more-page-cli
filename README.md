@@ -56,7 +56,32 @@ store.watch(
   }
 )
 ```
+### Vuex数据持久化
+```
+import createPersistedState from 'vuex-persistedstate'
+import * as Cookies from 'js-cookie'
 
+Vue.use(Vuex);
+
+export default new Vuex.Store({
+	state,
+	getters,
+	mutations,
+	actions,
+	plugins: [
+		createPersistedState({
+			storage: {
+				getItem: key => Cookies.get(key),
+				setItem: (key, value) => Cookies.set(key, value, {
+					expires: 0.25
+				}),
+				removeItem: key => Cookies.remove(key)
+			}
+		})
+	]
+})
+```
+---
 ## 前言
 
 vue-cli是Vue.js官方推出的脚手架，它功能丰富、扩展性强，为Vue应用开发带来了极大的便捷，它提供了多种开发范式，诠释了开箱即用。vue-cli@3版本经历了alpha、beta、rc版本近7个月的迭代开发，在最近几天正式版终于发布，本文主要讲解如何使用vue-cli创建一个多入口工程，若要近一步了解vue-cli，请访问[官方文档](https://cli.vuejs.org/guide/)。
