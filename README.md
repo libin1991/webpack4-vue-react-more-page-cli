@@ -36,6 +36,27 @@ function star(value) {
 }
 module.exports = star;
 ```
+### 监听store
+```
+const store = new Vuex.Store({
+  state,
+  mutations,
+  getters,
+  actions
+})
+
+// 监听聊天列表的值， 发生变化就保存在localStorage中
+store.watch(
+  (state) => state.chatlist,
+  (val) => {
+    localStorage.setItem('vue-chat', JSON.stringify(val));
+  },
+  {
+    deep: true
+  }
+)
+```
+
 ## 前言
 
 vue-cli是Vue.js官方推出的脚手架，它功能丰富、扩展性强，为Vue应用开发带来了极大的便捷，它提供了多种开发范式，诠释了开箱即用。vue-cli@3版本经历了alpha、beta、rc版本近7个月的迭代开发，在最近几天正式版终于发布，本文主要讲解如何使用vue-cli创建一个多入口工程，若要近一步了解vue-cli，请访问[官方文档](https://cli.vuejs.org/guide/)。
