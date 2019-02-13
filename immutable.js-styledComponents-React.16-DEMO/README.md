@@ -18,7 +18,15 @@ thunk.withExtraArgument = createThunkMiddleware;
 
 export default thunk;
 ```
-
+### shouldComponentUpdate
+```
+shouldComponentUpdate(nextProps, nextState) {
+        if (_.isEqual(this.props, nextProps) || !_.isEmpty(this.props)) {
+            return false
+        }
+        return true
+    }
+```
 
 
 一.使用 styled-components 来管理react中的样式文件
