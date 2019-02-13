@@ -1,5 +1,26 @@
 ### [Immutable.js了解一下？](https://juejin.im/post/5c62ae34e51d450aab0a373f)
 ### [redux middleware 源码分析](https://juejin.im/post/5a96d71e6fb9a0635c04acb7)
+
+### redux-thunk
+```
+function createThunkMiddleware(extraArgument) {
+  return ({ dispatch, getState }) => next => action => {
+    if (typeof action === 'function') {
+      return action(dispatch, getState, extraArgument);
+    }
+
+    return next(action);
+  };
+}
+
+const thunk = createThunkMiddleware();
+thunk.withExtraArgument = createThunkMiddleware;
+
+export default thunk;
+```
+
+
+
 一.使用 styled-components 来管理react中的样式文件
     npm install styled-components --save-dev
 
