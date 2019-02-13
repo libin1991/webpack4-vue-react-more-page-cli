@@ -13,7 +13,29 @@ export default {
 	}
 }
 ```
+## Vue 全局过滤器
+```
+//公用的过滤器
+Vue.filter('fromNow', require('./filters/fromNow'));
+Vue.filter('star', require('./filters/star'));
 
+// star.js
+function tpl(cls) {
+  return `<i class="m-font m-font-star m-star-${cls}"></i>`;
+}
+
+function star(value) {
+  if (!value) {
+    return null;
+  }
+  let _v = value.replace(/\[星星]/g, tpl('full'));
+  _v = _v.replace(/\[半星]/g, tpl('half'));
+  _v = _v.replace(/\[空星]/g, tpl('null'));
+  _v = _v.replace(/iconimg iconimg-xs/g, 'url-icon');
+  return _v;
+}
+module.exports = star;
+```
 ## 前言
 
 vue-cli是Vue.js官方推出的脚手架，它功能丰富、扩展性强，为Vue应用开发带来了极大的便捷，它提供了多种开发范式，诠释了开箱即用。vue-cli@3版本经历了alpha、beta、rc版本近7个月的迭代开发，在最近几天正式版终于发布，本文主要讲解如何使用vue-cli创建一个多入口工程，若要近一步了解vue-cli，请访问[官方文档](https://cli.vuejs.org/guide/)。
