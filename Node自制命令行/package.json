@@ -1,0 +1,15 @@
+{
+  "name": "sx",
+  "version": "1.0.0",
+  "description": "SX CMD",
+  "bin": {
+    "sx": "bin/index.js"
+  },
+  "main": "index.js",
+  "author": "sx",
+  "license": "MIT",
+  "devDependencies": {
+    "commander": "^2.19.0",
+    "yargs": "^13.2.1"
+  }
+}
