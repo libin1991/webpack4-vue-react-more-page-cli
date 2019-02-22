@@ -5,8 +5,7 @@ A plugin for [Inquirer](https://github.com/SBoudrias/Inquirer.js), similar to th
 [![npm](https://img.shields.io/npm/v/inquirer-checkbox-plus-prompt.svg)](https://www.npmjs.com/package/inquirer-checkbox-plus-prompt)
 [![npm](https://img.shields.io/npm/l/inquirer-checkbox-plus-prompt.svg)](https://github.com/faressoft/inquirer-checkbox-plus-prompt/blob/master/LICENSE)
 
-![Demo](/demo.gif?raw=true)
-
+### [cfonts](https://www.npmjs.com/package/cfonts) 
 # Installation
 
 ```
