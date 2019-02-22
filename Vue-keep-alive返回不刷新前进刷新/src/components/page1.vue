@@ -3,6 +3,7 @@
 		<button @click="goBack">返回</button>
 		<p>{{msg}}</p>
 		<p>{{str}}</p>
+		<input type="text" v-model="val" />
 		<router-link to="page2">跳转到下一个页面</router-link>
 	</div>
 </template>
@@ -12,6 +13,7 @@
 		name: "page1",
 		data() {
 			return {
+				val:"我是输入框",
 				msg: "我是第一个页面",
 				str: "", // 加载页面后执行获取数据的方法，插入到此
 				isFirstEnter: false // 是否第一次进入，默认false

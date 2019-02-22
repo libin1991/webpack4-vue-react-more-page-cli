@@ -3,6 +3,7 @@
 		<button @click="goBack">返回</button>
 		<p>{{msg}}</p>
 		<p>{{str}}</p>
+		<input type="text" v-model="val" />
 		<router-link to="page3">跳转到下一个页面</router-link>
 	</div>
 </template>
@@ -12,6 +13,7 @@
 		name: "page2",
 		data() {
 			return {
+				val:"我是输入框",
 				msg: "我是第二个页面",
 				str: "",
 				isFirstEnter: false
