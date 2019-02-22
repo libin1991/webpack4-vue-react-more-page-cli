@@ -1,0 +1,27 @@
+{
+	"name": "vue-keep-scroll-position",
+	"version": "0.1.2",
+	"description": "A vue 2.0 directive to keep scroll position for keep-alived components.",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/beeplin/vue-keep-scroll-position.git"
+	},
+	"keywords": [
+		"vue",
+		"keep",
+		"alive",
+		"scroll",
+		"position",
+		"component"
+	],
+	"author": "beeplin",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/beeplin/vue-keep-scroll-position/issues"
+	},
+	"homepage": "https://github.com/beeplin/vue-keep-scroll-position#readme"
+}
