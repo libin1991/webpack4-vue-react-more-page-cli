@@ -16,7 +16,12 @@
     "@vue/cli-plugin-eslint": "^3.0.5",
     "@vue/cli-service": "^3.0.5",
     "babel-polyfill": "^6.26.0",
+    "chalk": "^2.4.2",
     "element-resize-detector": "^1.2.0",
+    "filesize": "^4.1.2",
+    "gzip-size": "^5.0.0",
+    "herb": "^2.2.6",
+    "progress": "^2.0.3",
     "resize-detector": "^0.1.9",
     "vue-template-compiler": "^2.5.17"
   },

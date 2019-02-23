@@ -2,6 +2,10 @@ const webpack = require('webpack')
 const path = require('path');
 const WebpackInlineSourcePlugin = require('./plugin/plugin2');
 const WebpackfilelistPlugin = require('./plugin/filelist.js');
+const sizeTableWebpackPlugin = require('./plugin/size-table-webpack-plugin.js');
+
+const progressBarWebpackPlugin = require('./plugin/progress-bar-webpack-plugin.js');
+
 function resolve(dir) {
     return path.join(__dirname, dir)
 }
@@ -23,7 +27,9 @@ module.exports = {
             },{
             	path:['./src/lib/reset.min.css','./src/lib/A.css']
             }]),
-            new WebpackfilelistPlugin()
+            new WebpackfilelistPlugin(),
+            new sizeTableWebpackPlugin(),
+            new progressBarWebpackPlugin()
         ]
     },
     productionSourceMap: false,
