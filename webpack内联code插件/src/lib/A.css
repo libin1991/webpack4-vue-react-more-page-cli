@@ -1,0 +1,120 @@
+@keyframes zoom {
+  0% {
+    transform: scaleY(1);
+  }
+  50% {
+    transform: scaleY(0.6);
+  }
+  100% {
+    transform: scaleY(1);
+  }
+}
+
+.slider {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.slider__slides {
+  position: relative;
+  width: 300%;
+  height: 100%;
+  transition: transform 0.3s cubic-bezier(0.51, 0.92, 0.24, 1);
+  will-change: transform;
+}
+
+.slider[data-pos="0"] .slider__slides {
+  transform: translateX(0%);
+}
+
+.slider[data-pos="1"] .slider__slides {
+  transform: translateX(-33.33333%);
+}
+
+.slider[data-pos="2"] .slider__slides {
+  transform: translateX(-66.66667%);
+}
+
+.slider__slide {
+  float: left;
+  width: 33.33333%;
+  height: 100%;
+}
+
+.slider__dots {
+  display: flex;
+  position: absolute;
+  bottom: 1.5em;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.slider__dot, .slider__indicator {
+  display: block;
+  margin: 0 1em;
+  width: 1em;
+  height: 1em;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 100px;
+}
+
+.slider__indicator {
+  position: absolute;
+  background: white;
+  width: auto;
+}
+
+.slider__indicator--left {
+  transition: left 0.3s cubic-bezier(0.51, 0.92, 0.24, 1.15), right 0.3s 0.1s cubic-bezier(0.51, 0.92, 0.24, 1.15);
+}
+
+.slider__indicator--right {
+  transition: left 0.3s 0.1s cubic-bezier(0.51, 0.92, 0.24, 1.15), right 0.3s cubic-bezier(0.51, 0.92, 0.24, 1.15);
+}
+
+.slider__indicator--zoom {
+  animation: zoom 0.3s cubic-bezier(0.51, 0.92, 0.24, 1);
+}
+
+.slider[data-pos="0"] .slider__indicator {
+  left: 0em;
+  right: 6em;
+}
+
+.slider[data-pos="1"] .slider__indicator {
+  left: 3em;
+  right: 3em;
+}
+
+.slider[data-pos="2"] .slider__indicator {
+  left: 6em;
+  right: 0em;
+}
+
+.center {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background: #333;
+}
+
+.slider {
+  max-width: 600px;
+  max-height: 400px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+}
+
+.slider__slide:nth-child(1) {
+  background: #1464f0;
+}
+
+.slider__slide:nth-child(2) {
+  background: #8e17de;
+}
+
+.slider__slide:nth-child(3) {
+  background: #d41df2;
+}
