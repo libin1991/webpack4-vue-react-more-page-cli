@@ -1,0 +1,16 @@
+body{
+    background:red;
+    color:#fff;
+    width:100px;
+    height:100px;
+}
+
+.box{
+    transform:translate(50px);
+    transition:all .6s;
+}
+
+p{
+    margin:0;
+    padding:0;
+}
