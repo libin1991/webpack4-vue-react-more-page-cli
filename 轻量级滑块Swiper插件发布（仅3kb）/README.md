@@ -1,4 +1,5 @@
 # Light-Swiper
+![](https://raw.githubusercontent.com/libin1991/webpack4-vue-react-more-page-cli/master/%E8%BD%BB%E9%87%8F%E7%BA%A7%E6%BB%91%E5%9D%97Swiper%E6%8F%92%E4%BB%B6%E5%8F%91%E5%B8%83%EF%BC%88%E4%BB%853kb%EF%BC%89/1.jpg)
 
 [![npm version](http://badge.fury.io/js/light-swiper.svg)](http://badge.fury.io/js/light-swiper)
 [![Download Count](http://img.shields.io/npm/dm/light-swiper.svg?style=flat)](http://www.npmjs.com/package/light-swiper)
