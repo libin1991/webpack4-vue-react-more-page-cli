@@ -1,0 +1,15 @@
+{
+  "name": "light-swiper",
+  "version": "1.0.1",
+  "description": "a lightweight swiper plugin",
+  "author": "simonzhang <simonzhangr@foxmail.com>",
+  "private": false,
+  "license": "MIT",
+  "main": "/swiper.js",
+  "keywords": ["swiper", "swipe", "light-swiper"],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SimonZhangITer/light-swiper.git"
+  },
+  "homepage": "https://github.com/SimonZhangITer/light-swiper"
+}

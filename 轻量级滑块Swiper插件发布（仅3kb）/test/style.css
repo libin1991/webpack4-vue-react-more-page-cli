@@ -1,0 +1,69 @@
+.light-swiper {
+  overflow: hidden;
+  position: relative;
+  background: #f1f1f1;
+  padding: 10px 0;
+}
+
+.swiper-wrap {
+  overflow: hidden;
+  position: relative;
+}
+
+.swipe-item {
+  float: left;
+  width: 100%;
+  position: relative;
+}
+
+.pic {
+  display: block;
+  position: relative;
+  border-radius: 3px;
+  line-height: 0;
+  /* width: 300px; */
+  height: 125px;
+  margin: 0 10px;
+  overflow: hidden;
+}
+
+.preview-pic {
+  width: 300px;
+}
+
+.dot-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5px;
+}
+
+.dot {
+  display: block;
+}
+
+.dot span {
+  border-radius: 10px;
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  background: rgba(204, 188, 170, 0.3);
+  margin: 0 5px 0 5px;
+}
+
+.dot span.active {
+  background: #ccbcaa;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  margin: 0;
+}
+
+.divider {
+  padding: 10px;
+}
