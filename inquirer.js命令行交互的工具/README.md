@@ -6,6 +6,12 @@ A plugin for [Inquirer](https://github.com/SBoudrias/Inquirer.js), similar to th
 [![npm](https://img.shields.io/npm/l/inquirer-checkbox-plus-prompt.svg)](https://github.com/faressoft/inquirer-checkbox-plus-prompt/blob/master/LICENSE)
 
 ### [控制台的性感字体cfonts](https://www.npmjs.com/package/cfonts) 
+### [快速扫描CLI标志和参数](https://www.npmjs.com/package/mri)
+### [clui用于绘制漂亮的命令行表，仪表，微调器和迷你图](https://www.npmjs.com/package/clui)
+### [figlet中空字体](https://www.npmjs.com/package/figlet)
+### [优雅的终端微调器 对号，加载中等](https://www.npmjs.com/package/ora)
+### [puppeteer通过DevTools协议控制无头Chrome的高级AP](https://www.npmjs.com/package/puppeteer)
+
 # Installation
 
 ```
