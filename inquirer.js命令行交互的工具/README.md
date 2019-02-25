@@ -11,6 +11,8 @@ A plugin for [Inquirer](https://github.com/SBoudrias/Inquirer.js), similar to th
 ### [figlet中空字体](https://www.npmjs.com/package/figlet)
 ### [优雅的终端微调器 对号，加载中等](https://www.npmjs.com/package/ora)
 ### [puppeteer通过DevTools协议控制无头Chrome的高级AP](https://www.npmjs.com/package/puppeteer)
+### [强悍的运行命令ShellJS](https://www.npmjs.com/package/shelljs)
+
 
 # Installation
 
