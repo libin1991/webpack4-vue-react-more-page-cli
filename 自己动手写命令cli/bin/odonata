@@ -1,0 +1,31 @@
+#!/usr/bin/env node
+const pjson = require('../package');
+const program = require('commander');
+const cli = require('../src/cli');
+
+const {
+    version,
+    description
+} = pjson;
+
+program
+    .version(version)
+    .usage('[options] [url]')
+    .description(description)
+    .arguments('<url>')
+    .option('-u, --ua <u>', 'use mobile or desktop ua', /^(mobile|desktop)$/, 'mobile')
+    .parse(process.argv)
+    .action(cli)
+
+program.on('--help', function(){
+    console.log('')
+    console.log('Examples:');
+    console.log('  $ odonata http://baidu.com');
+    console.log('  $ odonata -ua desktop http://baidu.com');
+});
+
+program.parse(process.argv);
+
+if (!program.args.length) {
+    program.help();
+}
