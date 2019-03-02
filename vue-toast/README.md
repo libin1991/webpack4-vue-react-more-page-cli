@@ -1,6 +1,14 @@
 ### 微博toast
 
 ```
+import Alert from '@/components/vue-alert'
+import Toast from '@/components/vue-toast'
+
+Vue.use(Alert);
+Vue.use(Toast);
+```
+
+```
 this.$toast({
 	type: "loading", //success fail  warning loading msg
 	msg: "操作操作操作操作成功操作",
