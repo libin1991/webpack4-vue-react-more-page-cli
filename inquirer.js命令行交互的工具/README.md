@@ -14,7 +14,12 @@ A plugin for [Inquirer](https://github.com/SBoudrias/Inquirer.js), similar to th
 ### [puppeteer通过DevTools协议控制无头Chrome的高级AP](https://www.npmjs.com/package/puppeteer)
 ### [强悍的运行命令ShellJS](https://www.npmjs.com/package/shelljs)
 ### [SuperAgent是一个轻量级、灵活的、易读的、低学习曲线的客户端请求代理模块](https://www.jianshu.com/p/1432e0f29abd)
-
+### wechaty - 微信操作
+### node-schedule - 定时任务
+### superagent - 爬取页面信息
+### cheerio - 抓取页面
+### qrcode-terminal - 终端显示二维码
+---
 # Installation
 
 ```
