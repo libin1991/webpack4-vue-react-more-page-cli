@@ -1,0 +1,25 @@
+{
+  "name": "iview-loader",
+  "version": "1.2.2",
+  "description": "Better to combine with webpack",
+  "homepage": "http://www.iviewui.com",
+  "author": "Aresn",
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iview/iview-loader.git"
+  },
+  "bugs": {
+    "url": "https://github.com/iview/iview-loader/issues"
+  },
+  "dependencies": {
+    "loader-utils": "^1.1.0"
+  },
+  "devDependencies": {
+    "webpack": "^2.2.1"
+  }
+}
