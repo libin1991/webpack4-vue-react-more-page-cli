@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>main Page</title>
+    <style>
+        * {
+            margin: 0 0;
+            padding: 0 0;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>main Page</h1>
+    <button id="btn">点击打开</button>
+    <script>
+        window.onload = function() {
+            let windowObjectReference = null
+            document.getElementById('btn').onclick = function() {
+                if (!windowObjectReference) {
+                    windowObjectReference = window.open('./other.html', 'Yang')
+                    windowObjectReference.onload = function() {
+                        // windowObjectReference.location.hash = 'Yang'
+                        // windowObjectReference.postMessage('Yang', windowObjectReference.origin)
+                    
+                        localStorage.setItem('hero', 'Yang')
+                    }
+                } else {
+                    // windowObjectReference.location.hash = windowObjectReference.location.hash + 'NB'
+                    // windowObjectReference.postMessage('NB', windowObjectReference.origin)
+                    localStorage.setItem('hero', 'NB')
+                    windowObjectReference.focus()
+                }
+            }
+        }
+    </script>
+</body>
+</html>

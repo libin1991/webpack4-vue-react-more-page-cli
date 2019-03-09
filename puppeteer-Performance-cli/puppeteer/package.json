@@ -1,0 +1,32 @@
+{
+  "name": "omiga",
+  "version": "1.0.0",
+  "description": "omiga",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "img-spd": "src/app"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/libin1991/omiga.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/libin1991/easyT/issues"
+  },
+  "homepage": "https://github.com/libin1991/easyT#readme",
+  "dependencies": {
+    "chalk": "^2.4.2",
+    "commander": "^2.19.0",
+    "inquirer": "^6.2.2",
+    "puppeteer": "^1.7.0"
+  },
+  "devDependencies": {
+    "figlet": "^1.2.1"
+  }
+}

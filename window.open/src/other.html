@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>other Page</title>
+    <style>
+        * {
+            margin: 0 0;
+            padding: 0 0;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>other Page</h1>
+    <span id="content"></span>
+    <script>
+        // window.addEventListener("hashchange", function (e) {
+        //     document.title = window.location.hash
+        // }, false);
+
+        // window.addEventListener("message", function (e) {
+        //     document.title = typeof e.data === 'string' ? e.data : ''
+        // }, false);
+
+        window.onstorage = function (e) {
+            console.log(e)
+            document.title = e.newValue
+        }
+
+        setInterval(function () {
+            window.opener.windowObjectReference = window
+        }, 200)
+    </script>
+</body>
+
+</html>

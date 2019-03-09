@@ -1,0 +1,157 @@
+#! /usr/bin/env node
+
+// image spider (baidu ver.)
+const puppeteer = require("puppeteer");
+const path = require("path");
+const fs = require("fs");
+const os = require("os");
+var figlet = require('figlet');
+const program = require("commander");
+const inquirer = require("inquirer");
+const chalk = require("chalk");
+const { convert2Img, autoScroll } = require("./tools");
+const consoler = require("./consoler");
+
+console.log(chalk.red(consoler()));
+program
+  .version("1.0.0", "-v --version")
+  .description("img-spd is a spider get images from image.baidu.com")
+  .option("-k, --key [key]", "input the image keywords to download")
+  .option("-i, --interval [interval]", "input the operation interval(ms,default 200)", parseFloat)
+  .option("-n, --number [number]", "input the operation interval(ms,default 200)", parseInt)
+  .option("-m, --headless [headless]", "choose whether the program is running in headless mode")
+  .action(option => {
+  	//console.log(option)
+    var config = Object.assign(
+      {
+        key: "",
+        interval: 0,
+        number: 0,
+        head: false
+      },
+      option
+    );
+    var promps = [];
+    
+    console.log();
+    console.log(figlet.textSync('Omiga'));
+    console.log();
+    
+    console.log(chalk.yellow("================================================================"));
+    console.log(chalk.green ("Image spider version 1.2.0 designed by tuobaye0711 "));
+    console.log(chalk.yellow("================================================================"));
+    if (!config.key) {
+      promps.push({
+        type: "input",
+        name: "key",
+        default:"狗",
+        message: "请输入要下载的图像关键字",
+        validate: function(input) {
+          if (!input) {
+            return "不能空!";
+          }
+          return true;
+        }
+      });
+    }
+
+    if (config.interval === 0) {
+      promps.push({
+        type: "input",
+        name: "interval",
+        default: 200,
+        message: "请输入操作间隔(ms)"
+      });
+    }
+
+    if (config.number === 0) {
+      promps.push({
+        type: "input",
+        name: "number",
+        default: 20,
+        message: "请输入下载号码（1-1000）"
+      });
+    }
+
+    if (config.head === false) {
+      promps.push({
+        type: "confirm",
+        name: "headless",
+        default: true,
+        message: "程序是否在无头模式下运行?"
+      });
+    }
+
+    inquirer.prompt(promps).then(function(answers) {
+    	console.log(answers);   //{ key: '狗', interval: 200, number: '5', headless: true }
+      const { key, interval, number, headless } = answers;
+      const home = os.homedir();
+      const folder = 'img-spd';
+      const base = path.join(home, folder);
+      const target = path.join(base, key)
+      if (!fs.existsSync(base)) {
+        fs.mkdirSync(base);
+      }
+      if (!fs.existsSync(target)) {
+        fs.mkdirSync(target);
+      }
+      const spider = async () => {
+        const browser = await puppeteer.launch({ headless: headless });   //创建一个浏览器实例 Browser 对象
+        const page = await browser.newPage();   //通过 Browser 对象创建页面 Page 对象
+        await page.setViewport({ width: 2000, height: 800, });   //修改浏览器视窗大小
+        await page.goto("https://image.baidu.com");   //跳转到指定的页面
+        
+        
+        
+        console.log(chalk.yellow("go to https://image.baidu.com"));
+
+        await page.focus("#kw");
+        await page.keyboard.sendCharacter(key);
+        await page.waitFor(".s_search");
+        await page.click(".s_search");
+        console.log(chalk.blue("go to search list"));
+
+        page.on("load", async () => {
+        	console.log('--------------------------')
+        	console.log(page.performance);
+        	
+        	console.log('--------------------------')
+          if (number * 1 > 20) {
+            await autoScroll(page);
+          }
+          console.log(chalk.magenta("page loading done, start fetch..."));
+
+          const srcs = await page.evaluate(() => {
+            const images = document.querySelectorAll("img.main_img");
+            return Array.prototype.map.call(images, img => img.src);
+          });
+          console.log(
+            chalk.redBright(
+              `Get ${srcs.length} images totally, start download the first ${number *
+                1} images`
+            )
+          );
+
+          for (let i = 0; i < srcs.length && i < number * 1; i++) {
+            // sleep
+            await page.waitFor(interval * 1);
+            await convert2Img(srcs[i], target);
+            console.log(
+              chalk.greenBright(
+                `finished ${i + 1}/${Math.min(srcs.length, number * 1)} images`
+              )
+            );
+          }
+
+          console.log(chalk.green.bold(`job finished! The images are stored in ${target}`));
+         
+          
+          await browser.close();
+        });
+      };
+
+      spider();
+    });
+  });
+
+program.parse(process.argv);
