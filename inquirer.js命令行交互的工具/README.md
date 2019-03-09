@@ -19,6 +19,7 @@ A plugin for [Inquirer](https://github.com/SBoudrias/Inquirer.js), similar to th
 ### superagent - 爬取页面信息
 ### cheerio - 抓取页面
 ### qrcode-terminal - 终端显示二维码
+### Super Progress Bar 进度条
 ---
 # Installation
 
