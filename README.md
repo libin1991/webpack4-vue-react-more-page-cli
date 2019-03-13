@@ -1,4 +1,4 @@
-﻿# webpack4-vue-more-page
+﻿### [移动端Web页面适配方案对比](https://github.com/libin1991/webpack4-vue-react-more-page-cli/tree/master/%E7%A7%BB%E5%8A%A8%E7%AB%AFWeb%E9%A1%B5%E9%9D%A2%E9%80%82%E9%85%8D%E6%96%B9%E6%A1%88%E5%AF%B9%E6%AF%94)
  ![https://juejin.im/post/5b1253055188257d6b5cf699](https://user-gold-cdn.xitu.io/2018/6/2/163bf944535afcc0?imageslim)
  #### [奇葩轮播banner图组件](https://juejin.im/post/5b1253055188257d6b5cf699)
  ### [轻量级滑块Swiper轮播图banner插件发布（仅3kb）](https://github.com/libin1991/webpack4-vue-react-more-page-cli/tree/master/%E8%BD%BB%E9%87%8F%E7%BA%A7%E6%BB%91%E5%9D%97Swiper%E8%BD%AE%E6%92%AD%E5%9B%BEbanner%E6%8F%92%E4%BB%B6%E5%8F%91%E5%B8%83%EF%BC%88%E4%BB%853kb%EF%BC%89)
