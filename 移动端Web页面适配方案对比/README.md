@@ -78,9 +78,9 @@ dip或dp,（device independent pixels，设备独立像素）与屏幕密度有�
 
 ![概念关系图解](images/concept-map.png)
 
-![CSS像素与设备像素“田”字图解](/images/iphone-resolutions.png)
+![CSS像素与设备像素“田”字图解](images/iphone-resolutions.png)
 
-![iPhone屏幕尺寸示意图](/images/css-device-pixels.jpg)
+![iPhone屏幕尺寸示意图](images/css-device-pixels.jpg)
 
 
 ## 前端实现相关方式
