@@ -196,13 +196,13 @@ dip或dp,（device independent pixels，设备独立像素）与屏幕密度有�
 在scale=1.0时，1px边框显示效果;
 在scale=0.5时，2px边框显示效果;
 
-![scale 0.5 1px线条](/images/scale0.5-1px.png)
+![scale 0.5 1px线条](images/scale0.5-1px.png)
 
-![scale 1.0 1px线条](/images/scale1.0-1px.png)
+![scale 1.0 1px线条](images/scale1.0-1px.png)
 
-![scale 0.5 2px线条](/images/scale0.5-2px.png)
+![scale 0.5 2px线条](images/scale0.5-2px.png)
 
-![scale 1.0 1px线条](/images/scale1.0-1px.png)
+![scale 1.0 1px线条](images/scale1.0-1px.png)
 
 通过对比后发现，在scale=0.5时，1px的线比scale=1.0要细，即** 不同dpr的设备用不同伸缩比，可以实现在多倍屏设备上显示1px设备独立像素的线条 **，这也就解决了1px线条的显示问题。
 
@@ -293,19 +293,6 @@ font-size: px2rem(18px);
 >- 目前一般会选取iPhone6作为基准，设计图便要iPhone6的二倍图
 >- ** 当动态缩放视口为1/dpr, 计算所得的根元素fontSize也会跟着缩放，即若理想视口(scale=1), iPhone6根元素fontSize=16px; 若scale=0.5, iPhone6根元素fontSize=32px; 因此设置视口缩放应放于设置根元素fontSize之前。 **
 
-### flex布局 ###
-flex布局对于屏幕适配也很有帮助，有些地方通过flex布局的实现方式，效果会比较合理。
-关于flex布局，暂时不了解的建议阅读阮一峰老师的教程，分语法和实践两篇，讲得很清晰易懂实用。
-
-[Flex布局教程：语法篇](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html)
-
-[Flex布局教程：实例篇](http://www.ruanyifeng.com/blog/2015/07/flex-examples.html)
-
-![Flex布局图解1](/images/flex-1.png)
-
-![Flex布局图解2](/images/flex-2.png)
-
-
 ### vm/vh:CSS单位 
 ```vw(view-width), vh(view-height)``` 这两个单位是CSS新增的单位，表示视区宽度/高度，** 视区总宽度为100vw, 总高度为100vh **。
 > 视区指浏览器内部的可视区域大小：```window.innerWidth/Height```
@@ -324,7 +311,7 @@ flex布局对于屏幕适配也很有帮助，有些地方通过flex布局的实
 本文记录的实现方案```viewport scale=1/dpr```即参考自淘宝的方案，详细介绍可以查看这篇文章：[使用Flexible实现手淘H5页面的终端适配](https://github.com/amfe/article/issues/17)
 
 图解设计与前端协作方案：
-![手机淘宝团队适配协作模式](/images/taobao-flexible.png)
+![手机淘宝团队适配协作模式](images/taobao-flexible.png)
 
 方案关键点：
 - 动态改写<meta name="viewport">标签
