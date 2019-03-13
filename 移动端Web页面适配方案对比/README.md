@@ -386,6 +386,7 @@ font-size: px2rem(18px);
 
 ## 相关链接 
 - [使用Flexible实现手淘H5页面的终端适配](https://github.com/amfe/article/issues/17)
+- [移动端 REM布局 与 Viewport (VW) 布局的实例运用](https://github.com/imwtr/rem-vw-layout)
 - [web app变革之rem](https://isux.tencent.com/web-app-rem.html)
 - [手机淘宝的flexible设计与实现](http://www.html-js.com/article/2402)
 - [MobileWeb适配总结](http://html-js.com/article/MobileWeb)
