@@ -384,7 +384,7 @@ font-size: px2rem(18px);
 ```
 > 整个屏幕宽度最大750px(7.5rem),1rem对应的字体大小是 7.5rem/100px = 1rem/x  , x=100/7.5=13.333333333333334px ,设计稿100px 就是1rem 【实际像素大小除以100】 
 
-## 相关链接 ##
+## 相关链接 
 - [使用Flexible实现手淘H5页面的终端适配](https://github.com/amfe/article/issues/17)
 - [web app变革之rem](https://isux.tencent.com/web-app-rem.html)
 - [手机淘宝的flexible设计与实现](http://www.html-js.com/article/2402)
