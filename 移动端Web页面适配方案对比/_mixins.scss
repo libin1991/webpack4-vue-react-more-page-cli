@@ -1,0 +1,65 @@
+/* 
+ * 此处 $base-font-size 具体数值根据设计图尺寸而定
+ * flexible中设置的标准是【fontSize=16px, when 屏幕宽度=375】，因此，按此标准进行计算，
+ * 若设计图为iPhone6(375*667)的二倍稿，则$base-font-size=32px
+ *
+ */ 
+@function px2rem($px, $base-font-size: 32px) {
+  @if (unitless($px)) {
+    @warn "Assuming #{$px} to be in pixels, attempting to convert it into pixels for you";
+    @return px2rem($px + 0px); // That may fail.
+  } @else if (unit($px) == rem) {
+    @return $px;
+  }
+  @return ($px / $base-font-size) * 1rem;
+}
+
+// 使用sass的混合宏
+@mixin px2rem($property, $px-values, $baseline-px:32px, $support-for-ie:false){
+    //Conver the baseline into rems
+    $baseline-rem: $baseline-px / 1rem * 1;
+    //Print the first line in pixel values
+    @if $support-for-ie {
+        #{$property}: $px-values;
+    }
+    //if there is only one (numeric) value, return the property/value line for it.
+    @if type-of($px-values) == "number"{
+        #{$property}: $px-values / $baseline-rem;
+    }
+    @else {
+        //Create an empty list that we can dump values into
+        $rem-values:();
+        @each $value in $px-values{
+            // If the value is zero or not a number, return it
+            @if $value == 0 or type-of($value) != "number"{
+                $rem-values: append($rem-values, $value / $baseline-rem);
+            }
+        }
+        // Return the property and its list of converted values
+        #{$property}: $rem-values;
+    }
+}
+
+// 适配dpr的字体大小
+@mixin font-dpr($font-size){
+  font-size: $font-size;
+
+  [data-dpr="2"] & {
+      font-size: $font-size * 2;
+  }
+
+  [data-dpr="3"] & {
+      font-size: $font-size * 3;
+  }
+}
+@mixin px-dpr($property, $px) {
+  #{$property}: $px;
+
+  [data-dpr="2"] & {
+    #{$property}: $px * 2;
+  }
+
+  [data-dpr="3"] & {
+    #{$property}: $px * 3;
+  }
+}

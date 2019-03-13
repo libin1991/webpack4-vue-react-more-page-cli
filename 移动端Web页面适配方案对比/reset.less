@@ -1,0 +1,404 @@
+@charset "utf-8";
+* {
+    margin: 0;
+    padding: 0;
+    border: 0px;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    /*清除手机tap事件后element 时候出现的一个高亮*/
+    outline: none;
+    -webkit-text-size-adjust: none;
+    vertical-align: baseline;
+    -webkit-touch-callout:none;
+    -webkit-user-select:none;
+    user-select:none;
+}
+
+html,
+body {
+    background-color: #fff;
+    -webkit-text-size-adjust: 100%;
+    height: 100%;
+    position: relative;
+    -webkit-overflow-scrolling: touch;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 750px;
+    overflow-x: hidden;
+    -webkit-touch-callout: none;
+    /*禁用长按页面时的弹出菜单*/
+    -webkit-tap-highlight-color: white;
+    box-sizing: border-box;
+    -webkit-backface-visibility: hidden;
+    /*使用CSS transforms 或者 animations时可能会有页面闪烁的bug*/
+}
+
+li {
+    list-style: none;
+}
+
+ul,
+ol {
+    list-style-type: none;
+}
+
+select,
+input,
+img,
+select {
+    vertical-align: middle;
+}
+
+img {
+    border: none;
+    display: inline-block;
+}
+
+i {
+    font-style: normal;
+}
+
+a {
+    text-decoration: none;
+    -webkit-appearance: none;
+}
+
+*:focus {
+    outline: none;
+}
+
+input,
+textarea,
+button {
+    resize: none;
+    -webkit-appearance: none;
+    /*移除浏览器默认的样式，比如chrome的input默认样式*/
+    outline: none;
+}
+
+input {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+strong {
+    font-weight: bold;
+}
+
+h3,
+h4 {
+    font-weight: normal;
+}
+
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+    color: #cecece;
+}
+
+input:-moz-placeholder,
+textarea:-moz-placeholder {
+    color: #cecece;
+}
+
+input,
+textarea,
+[contenteditable] {
+    /*用CARET-COLOR来自定义光标的样式*/
+    caret-color: red;
+}
+
+input[type="button"],
+input[type="submit"],
+input[type="file"],
+button {
+    cursor: pointer;
+    -webkit-appearance: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.hoverhands {
+    cursor: pointer;
+    /*悬浮显示手*/
+}
+
+.use-3D {
+    -webkit-transform: rotateY(60deg);
+    /* Chrome, Safari, Opera */
+    -webkit-transform-style: preserve-3d;
+    /* Chrome, Safari, Opera */
+    transform: rotateY(60deg);
+    transform-style: preserve-3d;
+}
+
+.perspective {
+    /*perspective 透视  : 这个属性的存在决定你看到的元素是2d还是3d。一般设置在包裹元素的父类上。*/
+    perspective: 400px;
+}
+
+
+/*禁止选中copy*/
+
+.dont-select {
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    -khtml-user-select: none;
+    user-select: none;
+}
+
+
+/*float*/
+
+.f-left {
+    float: left;
+}
+
+.f-right {
+    float: right;
+}
+
+.clearfloat:after {
+    content: "";
+    display: block;
+    height: 0;
+    clear: both;
+    zoom: 1;
+    visibility: hidden;
+}
+
+.clear,
+.clearfloat {
+    clear: both;
+    zoom: 1;
+}
+
+.hide {
+    display: none !important;
+}
+
+.show {
+    display: block;
+}
+
+.tc {
+    text-align: center;
+}
+
+.tl {
+    text-align: left;
+}
+
+.tr {
+    text-align: right;
+}
+
+
+/*一行多行显示省略号*/
+
+.one-line {
+    display: -webkit-box !important;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-all;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    /*clip  修剪文本。*/
+}
+
+.more-line {
+    display: -webkit-box !important;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-all;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+
+.relative {
+    position: relative;
+}
+
+.auto-gp {
+    /*自动换行*/
+    word-wrap: break-word;
+    word-break: normal;
+}
+
+
+/*flex*/
+
+.flex {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    /*flex-start | flex-end | center | space-between | space-around;*/
+    align-items: flex-start;
+    /*flex-start | flex-end | center | baseline | stretch;*/
+    align-content: flex-start;
+    /*flex-start | flex-end | center | space-between | space-around | stretch;*/
+    align-self: auto;
+}
+
+
+/*移动端1px*/
+
+.onepx-border:before {
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 200%;
+    height: 200%;
+    border: 1px solid blue;
+    transform-origin: 0 0;
+    transform: scale(0.5, 0.5);
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+
+
+/*移动端1px*/
+
+.onepx-top-border:before {
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 1px;
+    background: #e1e1e1;
+    transform: scaleY(0.5);
+    box-sizing: border-box;
+}
+
+.onepx-right-border:after {
+    content: "";
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: 1px;
+    height: 100%;
+    background: #e1e1e1;
+    transform: scaleX(0.5);
+    box-sizing: border-box;
+}
+
+.onepx-left-border:after {
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 1px;
+    height: 100%;
+    background:#e1e1e1;
+    transform: scaleX(0.5);
+    box-sizing: border-box;
+}
+
+.onepx-bottom-border:after {
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    height: 1px;
+    background: #e1e1e1;
+    transform: scaleY(0.5);
+    box-sizing: border-box;
+}
+
+
+
+[v-cloak] {
+    display: none;
+}
+
+
+/*滚动条样式*/
+
+
+/*
+::-webkit-scrollbar {
+    display: none;
+}
+
+::-webkit-scrollbar {  //隐藏滚轮display: none;
+	width: 6px;
+	height: 6px;
+}
+
+::-webkit-scrollbar-track-piece {
+	background: #eee;
+}
+
+::-webkit-scrollbar-thumb:vertical {
+	background: #666;
+}
+*/
+
+.checkboxbtn {
+    font-size: 0px;
+    position: relative;
+    input[type="checkbox"] {
+        opacity: 0;
+        position: absolute;
+        &:checked {
+            &+span{
+                border:1px solid #95ccfe;
+            }
+            &+span:after {
+                display: inline-block;
+            }
+            &+span:before {
+                display: inline-block;
+            }
+        }
+    }
+    span {
+        box-sizing: border-box;
+        display: inline-block;
+        width: 0.3623188405797102rem;
+        height: 0.3623188405797102rem;
+        border: 1px solid #ccc;
+        background: #fff;
+        border-radius: 50%;
+        position: relative;
+        &:before {
+            content: "";
+            font-size: 0px;
+            border-radius: 50%;
+            display: none;
+            background: #95ccfe;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0rem;
+            right: 0px;
+            bottom: 0px;
+            left: 0rem;
+            margin: auto;
+        }
+        &:after {
+            content: "";
+            font-size: 0px;
+            display: none;
+            border-right: 1px solid #FFF;
+            border-bottom: 1px solid #fff;
+            background: #95ccfe;
+            transform: rotate(45deg);
+            position: absolute;
+            transition: all 0.3s ease;
+            width: 0.09057971014492755rem;
+            height: 0.1811594202898551rem;
+            top: -0.054rem;
+            right: 0px;
+            bottom: 0px;
+            left: -0.01rem;
+            margin: auto;
+        }
+    }
+}
