@@ -1,0 +1,12 @@
+.editor-main-a {
+  display: flex;
+  flex: 1; }
+  .editor-main-a .common-container {
+    width: 50%;
+    overflow-y: scroll;
+    border: 1px solid #ddd;
+    border-top: none; }
+    .editor-main-a .common-container .common-wrapper {
+      padding: 20px;
+      min-height: 100%;
+      outline: none; }

@@ -1,0 +1,20 @@
+// 编辑框主体样式
+.editor-main-b {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+  .common-container {
+    width: 50%;
+    border: 1px solid #ddd;
+    overflow-y: hidden;
+    border-top: none;
+    padding: 0 20px;
+  }
+  .editor-container {
+    padding-right: 0;
+    overflow: hidden;
+  }
+  .preview-container {
+    overflow-y: scroll;
+  }
+}

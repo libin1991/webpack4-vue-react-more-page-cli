@@ -1,0 +1,15 @@
+.editor-main-b {
+  display: flex;
+  flex: 1;
+  overflow: hidden; }
+  .editor-main-b .common-container {
+    width: 50%;
+    border: 1px solid #ddd;
+    overflow-y: hidden;
+    border-top: none;
+    padding: 0 20px; }
+  .editor-main-b .editor-container {
+    padding-right: 0;
+    overflow: hidden; }
+  .editor-main-b .preview-container {
+    overflow-y: scroll; }
