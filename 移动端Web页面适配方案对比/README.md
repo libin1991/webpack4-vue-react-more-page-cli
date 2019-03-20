@@ -1,4 +1,5 @@
 # 移动端适配方案对比
+## [不要再问我移动适配的问题了](https://segmentfault.com/a/1190000017784801#articleHeader7)
 ## 前言与目录 
 移动端Web页面，即常说的H5页面、手机页面、webview页面等。
 
