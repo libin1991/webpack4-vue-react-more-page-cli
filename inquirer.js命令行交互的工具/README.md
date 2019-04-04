@@ -20,6 +20,7 @@ A plugin for [Inquirer](https://github.com/SBoudrias/Inquirer.js), similar to th
 ### cheerio - 抓取页面
 ### qrcode-terminal - 终端显示二维码
 ### Super Progress Bar 进度条
+### internal-ip  获取IP地址
 ---
 # Installation
 
