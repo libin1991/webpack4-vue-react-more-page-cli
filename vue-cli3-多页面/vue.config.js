@@ -23,7 +23,7 @@ console.log(pages)
 
 module.exports = {
 	lintOnSave: false, //禁用eslint
-	baseUrl: process.env.NODE_ENV === "production" ? '//conchfairy.sinajs.cn/music/' : '/',
+	baseUrl: process.env.NODE_ENV === "production" ? '//my.cdn.com/sxVue/' : '/',
 	productionSourceMap: false,
 	pages,
 	devServer: {
