@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <title>Contextmenu.js</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0,minimal-ui">
+  <meta name="keywords" content="Contextmenu.js">
+  <meta name="description" content="Contextmenu.js">
+  <link rel="stylesheet" href="css/app.css">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="contextmenu/contextmenu.css">
+  <link rel="icon" href="favicon.ico">
+</head>
+
+<body>
+  <div class="app">区域内鼠标右键</div>
+  <script src="contextmenu/contextmenu.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+    var app = new Contextmenu('.app', {
+      menu: [{
+        name: '返回',
+        disabled: true
+      },{
+        name: '前进',
+        disabled: true
+      },{
+        name: '重新加载',
+        border: true,
+        callback: function(){
+          console.log('你点击了：重新加载');
+          app.hide();
+        }
+      },{
+        name: '另存为...',
+        callback: function(){
+          console.log('你点击了：另存为');
+          app.hide();
+        }
+      },{
+        name: '打印...',
+        callback: function(){
+          console.log('你点击了：打印');
+          app.hide();
+        }
+      },{
+        name: '投射...',
+        border: true,
+        callback: function(){
+          console.log('你点击了：投射');
+          app.hide();
+        }
+      },{
+        name: '更多...',
+        children: [{
+          name: '显示网页源码',
+          callback: function(){
+            console.log('你点击了：显示网页源码');
+            app.hide();
+          }
+        },{
+          name: '检测视图',
+          callback: function(){
+            console.log('你点击了：检测视图');
+            app.hide();
+          }
+        }]
+      }]
+    });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,16 @@
+.typingWrap {
+  text-align: center;
+  margin-top: 200px;
+  font-size: 18px;
+  color: #666;
+}
+
+.typingWrap .typingDemo {
+  display: inline-block;
+}
+
+.typingWrap .title{
+  font-size: 14px;
+  margin-top: 20px;
+  color: #999;
+}

@@ -1,0 +1,26 @@
+.validate-demo{
+  display: inline-block;
+  width: 45%;
+}
+
+.validate-demo h4{
+  margin-left: 50px;
+}
+
+.validate-demo p .title{
+  display: inline-block;
+  width: 150px;
+  text-align: right;
+}
+
+.validate-demo p label{
+  margin-right: 5px;
+}
+
+.validate-demo .submit{
+  margin-left: 150px;
+}
+
+input[type="number"]{
+  width: 175px;
+}

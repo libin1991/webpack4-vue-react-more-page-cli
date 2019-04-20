@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <title>Tsorter.js</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0,minimal-ui">
+    <meta name="keywords" content="Tsorter.js">
+    <meta name="description" content="Tsorter.js">
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="css/normalize.css"> -->
+    <link rel="stylesheet" href="tsorter/tsorter.css">
+    <link rel="icon" href="favicon.ico">
+</head>
+
+<body>
+    <div class="container">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th data-tsorter-name="number" data-tsorter-type="numeric" data-tsorter-fn="sorter01">#</th>
+                    <th data-tsorter-name="firstName">First Name</th>
+                    <th data-tsorter-name="lastName">Last Name</th>
+                    <th data-tsorter-name="username">Username</th>
+                    <th data-tsorter-name="chineseName">Chinese Name</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Randy</td>
+                    <td>Goodwin</td>
+                    <td>hornfels</td>
+                    <td>潘刚毅</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Marion</td>
+                    <td>Santos</td>
+                    <td>extoll</td>
+                    <td>之忆曼</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Earl</td>
+                    <td>Byrd</td>
+                    <td>scullian</td>
+                    <td>闳素华</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Juan</td>
+                    <td>Rios</td>
+                    <td>wimp</td>
+                    <td>栗灵萱</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>Wayne</td>
+                    <td>Daniel</td>
+                    <td>charts</td>
+                    <td>言嘉云</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>Angel</td>
+                    <td>Tucker</td>
+                    <td>polehiss</td>
+                    <td>昔春梅</td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>Shawn</td>
+                    <td>Martin</td>
+                    <td>tellurium</td>
+                    <td>和思涵</td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td>Linda</td>
+                    <td>Murray</td>
+                    <td>melody</td>
+                    <td>贝夏岚</td>
+                </tr>
+                <tr>
+                    <td>9</td>
+                    <td>Dave</td>
+                    <td>Abbott</td>
+                    <td>quickest</td>
+                    <td>展安国</td>
+                </tr>
+                <tr>
+                    <td>10</td>
+                    <td>Maureen</td>
+                    <td>Walters</td>
+                    <td>magnolia</td>
+                    <td>丛秀洁</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script src="tsorter/tsorter.js"></script>
+    <script src="js/app.js"></script>
+    <script>
+        // 自定义排序规则
+        var sorter01 = function (a, b, type) {
+            a = a.textContent;
+            b = b.textContent;
+            return type == 'ascend' ? b - a : a - b;
+        }
+
+        // 实例化
+        var app = new Tsorter('.table', {
+            sorters: { // 自定义排序
+                sorter01: sorter01
+            }, 
+            default: 'number=ascend', // 默认排序
+            update: function(str){ // 排序更新钩子
+                console.log(str)
+            }
+        });
+    </script>
+</body>
+
+</html>

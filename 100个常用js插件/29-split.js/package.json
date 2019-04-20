@@ -1,0 +1,42 @@
+{
+  "name": "split",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "dev": "webpack-dev-server --mode development --open --inline --content-base docs/",
+    "build": "webpack --mode production && node publish.js",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zhw2590582/100plugins.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zhw2590582/100plugins/issues"
+  },
+  "homepage": "https://github.com/zhw2590582/100plugins#readme",
+  "devDependencies": {
+    "autoprefixer": "^8.1.0",
+    "awesome-typescript-loader": "^5.0.0",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.4",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "css-loader": "^0.28.11",
+    "fs-extra": "^5.0.0",
+    "jest": "^22.4.2",
+    "mini-css-extract-plugin": "^0.2.0",
+    "node-sass": "^4.7.2",
+    "postcss-loader": "^2.1.3",
+    "sass-loader": "^6.0.7",
+    "style-loader": "^0.20.3",
+    "typescript": "^2.8.3",
+    "webpack": "^4.1.1",
+    "webpack-cli": "^2.0.12",
+    "webpack-dev-server": "^3.1.1"
+  }
+}

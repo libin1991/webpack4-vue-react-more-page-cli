@@ -1,0 +1,11 @@
+.distpicker{
+  margin: 20px;
+}
+
+.distpicker select{
+  margin-right: 15px;
+}
+
+.title{
+  margin-left: 20px;
+}

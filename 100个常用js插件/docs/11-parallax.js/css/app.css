@@ -1,0 +1,28 @@
+.parallaxWrap{
+  height: 2500px;
+  margin-top: 500px;
+  text-align: center;
+}
+
+.parallax{
+  display: inline-block;
+  width: 40px;
+  margin-right: 10px;
+  height: 100px;
+  line-height: 100px;
+  text-align: center;
+  background: #2bb8c3;
+  color: #fff;
+}
+
+.addblock{
+  position: fixed;
+  left: 10px;
+  top: 10px;
+}
+
+.destory{
+  position: fixed;
+  left: 100px;
+  top: 10px;
+}

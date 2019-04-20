@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <title>counterUp.js</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0,minimal-ui">
+    <meta name="keywords" content="counterUp.js">
+    <meta name="description" content="counterUp.js">
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/consola.css">
+    <link rel="icon" href="favicon.ico">
+</head>
+
+<body>
+    <div class="counterUp-container">
+        <div class="counter" data-counter-delay="10" data-counter-time="1000" data-counter-from="100">123</div>
+        <div class="counter" data-counter-delay="20" data-counter-time="2000" data-counter-from="1000">1234</div>
+        <div class="counter" data-counter-delay="30" data-counter-time="3000" data-counter-from="10000">12345</div>
+        <div class="counter" data-counter-delay="40" data-counter-time="4000" data-counter-from="100000">123456</div>
+        <div class="counter" data-counter-delay="50" data-counter-time="5000" data-counter-from="1000000">1234567</div>
+        <div class="counter" data-counter-delay="60" data-counter-time="6000" data-counter-from="10000000">12345678</div>
+        <div class="counter" data-counter-delay="70" data-counter-time="7000" data-counter-from="100000000">123456789</div>
+    </div>
+    <script src="js/consola.js"></script>
+    <script>consola.creat();</script>
+    <script src="counterUp/counterUp.js"></script>
+    <script src="js/app.js"></script>
+    <script>
+        var app = new CounterUp('.counter', {
+            delay: 20,
+            time: 1000,
+            counterFn: function (number, el) {
+                el.classList.add('counting');
+                return '$ ' + formatInteger(number, 9);
+            },
+            startCallback: function (number, el) {
+                console.log('开始：' + number);
+            },
+            endCallback: function (number, el) {
+                el.classList.remove('counting');
+                el.classList.add('end');
+                console.log('结束：' + number);
+            }
+        });
+
+        app.start();
+
+        // 格式化数字
+        function formatInteger(num, length) {
+            return (Array(length).join('0') + num).slice(-length).replace(/(\d{1,3})(?=(\d{3})+(?:$|\.))/g, "$1,");
+        }
+
+    </script>
+</body>
+
+</html>

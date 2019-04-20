@@ -1,0 +1,27 @@
+.main{
+    width: 900px;
+    margin: 100px auto;
+}
+
+.lottery{
+    text-align: center;
+}
+
+.lottery .item{
+    float: left;
+    width: 10%;
+    height: 50px;
+    line-height: 50px;
+    background: #ccc;
+    border: 2px solid #fff;
+    box-sizing: border-box;
+}
+
+.lottery .__lottery__active{
+    background: #999;
+}
+
+.lottery .start{
+    display: inline-block;
+    margin-top: 20px;
+}

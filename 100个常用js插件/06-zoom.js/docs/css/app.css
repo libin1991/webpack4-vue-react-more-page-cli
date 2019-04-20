@@ -1,0 +1,11 @@
+body{
+  background: #F0F0F0;
+  color: #666
+}
+
+.app{
+  width: 500px;
+  margin: 0 auto;
+  font-size: 14px;
+  text-align: center;
+}

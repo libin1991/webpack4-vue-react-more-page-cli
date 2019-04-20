@@ -1,0 +1,20 @@
+#progress {
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  width: 100%;
+  height: 2px;
+  opacity: 1;
+  transition: all 500ms ease;
+  .bar {
+    background: #29d;
+    height: 100%;
+    width: 0%;
+  }
+
+  &.hide {
+    opacity: 0;
+  }
+}

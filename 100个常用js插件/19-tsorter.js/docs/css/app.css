@@ -1,0 +1,9 @@
+.container{
+  max-width: 100%;
+  width: 1200px;
+  margin: 50px auto 500px;
+}
+
+.table-container{
+  margin-bottom: 20px;
+}

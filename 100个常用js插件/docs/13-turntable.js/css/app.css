@@ -1,0 +1,24 @@
+body{
+  height: 3000px;
+}
+
+.demoWrap{
+  position: fixed;
+  left: 100px;
+  top: 100px;
+}
+
+.demoWrap .demo {
+  float: left;
+  text-align: center;
+  font-size: 16px;
+  margin-left: 100px;
+}
+
+.turntableDemo1, .turntableDemo2 {
+  width: 475px;
+  height: 260px;
+  overflow: hidden;
+  border: 1px #d0d0d0 solid;
+  margin-bottom: 20px;
+}

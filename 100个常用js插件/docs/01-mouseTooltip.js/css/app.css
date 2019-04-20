@@ -1,0 +1,13 @@
+.app {
+  margin-top: 100px;
+  text-align: center;
+}
+
+.tooltipDemo {
+  cursor: pointer;
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  background: #999;
+  margin-right: 10px;
+}

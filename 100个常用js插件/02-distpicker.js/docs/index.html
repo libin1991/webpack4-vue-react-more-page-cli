@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <title>distpicker.js</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0,minimal-ui">
+  <meta name="keywords" content="distpicker.js">
+  <meta name="description" content="distpicker.js">
+  <link rel="stylesheet" href="css/app.css">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="distpicker/distpicker.css">
+  <link rel="icon" href="favicon.ico">
+</head>
+
+<body>
+  <div class="app">
+    <p class="title">请查看html里的注释和Console</p>
+
+    <p class="title">Demo1:</p>
+    <div id="distpicker01" class="distpicker">
+      <select></select>
+      <select></select>
+      <select></select>
+    </div>
+
+    <p class="title">Demo2:</p>
+    <div id="distpicker02" class="distpicker">
+      <select></select>
+      <select></select>
+      <select></select>
+    </div>
+
+    <p class="title">Demo3:</p>
+    <div id="distpicker03" class="distpicker">
+      <select></select>
+      <select></select>
+      <select></select>
+    </div>
+
+    <p class="title">Demo4:</p>
+    <div id="distpicker04" class="distpicker">
+      <select></select>
+      <select></select>
+      <select></select>
+    </div>
+
+  </div>
+  <script src="distpicker/distpicker.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+    var distpicker01 = new Distpicker({
+      target: '#distpicker01',
+      placeholder: ["请选择省", "请选择市", "请选择区"],
+      autoselect: ["山西省", "太原市", "小店区"],
+      callback: function (value) {
+        console.log(value);
+      }
+    });
+
+    var distpicker02 = new Distpicker({
+      target: '#distpicker02',
+      valueType: 'code',
+      autoselect: ["河北省", "石家庄市"],
+      callback: function (value) {
+        console.log(value);
+      }
+    });
+
+    var distpicker03 = new Distpicker({
+      target: '#distpicker03',
+      callback: function (value) {
+        console.log(value);
+      }
+    });
+
+    var distpicker04 = new Distpicker({
+      target: '#distpicker04',
+      callback: function (value) {
+        console.log(value);
+      }
+    });
+
+    //根据编码返回地区名
+    console.log(distpicker01.getDistricts(130000));
+
+    //根据地区名返回编码
+    console.log(distpicker01.getDistricts('广州市'));
+
+    //返回当前值数组，可以是编码或者地区名
+    console.log(distpicker01.getValue());
+
+    //重置实例
+    distpicker03.reset();
+
+    //销毁实例
+    distpicker04.destroy();
+
+  </script>
+</body>
+
+</html>

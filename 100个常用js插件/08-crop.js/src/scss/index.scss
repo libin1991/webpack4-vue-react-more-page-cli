@@ -1,0 +1,234 @@
+.crop_container {
+    position: relative;
+    font-size: 0;
+    line-height: 0;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    direction: ltr;
+    -ms-touch-action: none;
+    touch-action: none;
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQAQMAAAAlPW0iAAAAA3NCSVQICAjb4U/gAAAABlBMVEXMzMz////TjRV2AAAACXBIWXMAAArrAAAK6wGCiw1aAAAAHHRFWHRTb2Z0d2FyZQBBZG9iZSBGaXJld29ya3MgQ1M26LyyjAAAABFJREFUCJlj+M/AgBVhF/0PAH6/D/HkDxOGAAAAAElFTkSuQmCC');
+
+    .crop_canvas {
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+
+    .crop_modal {
+        opacity: 0.5;
+        background: #000;
+    }
+
+    .crop_box {
+
+        .crop_view {
+            display: block;
+            overflow: hidden;
+            width: 100%;
+            height: 100%;
+            outline: 1px solid #39f;
+            outline-color: rgba(51, 153, 255, 0.75);
+        }
+
+            .crop_dashed {
+                position: absolute;
+                display: block;
+                opacity: 0.5;
+                border: 0 dashed #eee;
+            }
+
+            .crop_dashed.dashed_h {
+                top: 33.33333%;
+                left: 0;
+                width: 100%;
+                height: 33.33333%;
+                border-top-width: 1px;
+                border-bottom-width: 1px;
+            }
+
+            .crop_dashed.dashed_v {
+                top: 0;
+                left: 33.33333%;
+                width: 33.33333%;
+                height: 100%;
+                border-right-width: 1px;
+                border-left-width: 1px;
+            }
+
+            .crop_center {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                display: block;
+                width: 0;
+                height: 0;
+                opacity: 0.75;
+            }
+
+            .crop_center:after,
+            .crop_center:before {
+                position: absolute;
+                display: block;
+                content: ' ';
+                background-color: #eee;
+            }
+
+            .crop_center:before {
+                top: 0;
+                left: -3px;
+                width: 7px;
+                height: 1px;
+            }
+
+            .crop_center:after {
+                top: -3px;
+                left: 0;
+                width: 1px;
+                height: 7px;
+            }
+
+            .crop_face,
+            .crop_line,
+            .crop_point {
+                position: absolute;
+                display: block;
+                width: 100%;
+                height: 100%;
+                opacity: 0.1;
+            }
+
+            .crop_face {
+                top: 0;
+                left: 0;
+                background-color: #fff;
+            }
+
+            .crop_line {
+                background-color: #39f;
+            }
+
+            .crop_line.line_e {
+                top: 0;
+                right: -3px;
+                width: 5px;
+                cursor: e-resize;
+            }
+
+            .crop_line.line_n {
+                top: -3px;
+                left: 0;
+                height: 5px;
+                cursor: n-resize;
+            }
+
+            .crop_line.line_w {
+                top: 0;
+                left: -3px;
+                width: 5px;
+                cursor: w-resize;
+            }
+
+            .crop_line.line_s {
+                bottom: -3px;
+                left: 0;
+                height: 5px;
+                cursor: s-resize;
+            }
+
+            .crop_point {
+                width: 5px;
+                height: 5px;
+                opacity: 0.75;
+                background-color: #39f;
+            }
+
+            .crop_point.point_e {
+                top: 50%;
+                right: -3px;
+                margin-top: -3px;
+                cursor: e-resize;
+            }
+
+            .crop_point.point_n {
+                top: -3px;
+                left: 50%;
+                margin-left: -3px;
+                cursor: n-resize;
+            }
+
+            .crop_point.point_w {
+                top: 50%;
+                left: -3px;
+                margin-top: -3px;
+                cursor: w-resize;
+            }
+
+            .crop_point.point_s {
+                bottom: -3px;
+                left: 50%;
+                margin-left: -3px;
+                cursor: s-resize;
+            }
+
+            .crop_point.point_ne {
+                top: -3px;
+                right: -3px;
+                cursor: ne-resize;
+            }
+
+            .crop_point.point_nw {
+                top: -3px;
+                left: -3px;
+                cursor: nw-resize;
+            }
+
+            .crop_point.point_sw {
+                bottom: -3px;
+                left: -3px;
+                cursor: sw-resize;
+            }
+
+            .crop_point.point_se {
+                right: -3px;
+                bottom: -3px;
+                width: 5px;
+                height: 5px;
+                cursor: se-resize;
+                opacity: 1;
+            }
+
+            .crop_point.point_se:before {
+                position: absolute;
+                right: -50%;
+                bottom: -50%;
+                display: block;
+                width: 200%;
+                height: 200%;
+                content: ' ';
+                opacity: 0;
+                background-color: #39f;
+            }
+    }
+
+    .crop_wh {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+    }
+
+    .crop_move {
+        cursor: move;
+    }
+
+    .crop_crop {
+        cursor: crosshair;
+    }
+
+    .crop_hidden {
+        display: none;
+    }
+}

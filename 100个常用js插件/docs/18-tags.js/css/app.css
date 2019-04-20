@@ -1,0 +1,21 @@
+.container{
+  max-width: 100%;
+  width: 1200px;
+  margin: 50px auto 500px;
+}
+
+.tags-container{
+  margin-bottom: 20px;
+}
+
+.data{
+  min-height: 100px;
+  padding: 10px;
+  font-size: 12px;
+  color: #666;
+  background: #eee;
+  border-radius: 4px;
+  border: 1px solid #d8dce5;
+  word-break: break-all;
+  box-sizing: border-box;
+}

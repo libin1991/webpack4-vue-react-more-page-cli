@@ -1,0 +1,2 @@
+#progress{position:fixed;z-index:999;top:0;left:0;pointer-events:none;width:100%;height:2px;opacity:1;transition:all .5s ease}#progress .bar{background:#29d;height:100%;width:0}#progress.hide{opacity:0}
+/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJwcm9ncmVzcy9wcm9ncmVzcy5jc3MiLCJzb3VyY2VSb290IjoiIn0=*/

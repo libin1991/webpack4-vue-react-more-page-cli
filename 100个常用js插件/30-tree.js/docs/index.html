@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <title>tree.js</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0,minimal-ui">
+    <meta name="keywords" content="tree.js">
+    <meta name="description" content="tree.js">
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/consola.css">
+    <link rel="stylesheet" href="tree/tree.css">
+    <link rel="icon" href="favicon.ico">
+</head>
+
+<body>
+    <div class="tree-container"></div>
+    <script src="js/consola.js"></script>
+    <script>consola.creat({ position: 'right' });</script>
+    <script src="tree/tree.js"></script>
+    <script src="js/app.js"></script>
+    <script>
+
+        var nodes = [{
+            value: 'value1',
+            label: 'label1',
+            checked: true,
+            expanded: true,
+            children: [
+                { value: 'value1-1', label: 'label1-1' },
+                { value: 'value1-2', label: 'label1-2' },
+                { value: 'value1-3', label: 'label1-3' }
+            ],
+        }, {
+            value: 'value2',
+            label: 'label2',
+            checked: true,
+            expanded: false,
+            children: [
+                { value: 'value2-1', label: 'label2-1' },
+                { value: 'value2-2', label: 'label2-2' },
+                { value: 'value2-3', label: 'label2-3' }
+            ]
+        }, {
+            value: 'value3',
+            label: 'label3',
+            checked: false,
+            expanded: true,
+            children: [
+                {
+                    value: 'value3-1',
+                    label: 'label3-1',
+                    checked: false,
+                    expanded: true,
+                    children: [
+                        { value: 'value3-1-1', label: 'label3-1-1' },
+                        { value: 'value3-1-2', label: 'label3-1-2' },
+                        { value: 'value3-1-3', label: 'label3-1-3' }
+                    ]
+                },
+                {
+                    value: 'value3-2',
+                    label: 'label3-2',
+                    checked: false,
+                    expanded: true,
+                    children: [
+                        { value: 'value3-2-1', label: 'label3-2-1' },
+                        { value: 'value3-2-2', label: 'label3-2-2' },
+                        { value: 'value3-2-3', label: 'label3-2-3' }
+                    ]
+                },
+                {
+                    value: 'value3-3',
+                    label: 'label3-3',
+                    checked: false,
+                    expanded: true,
+                    children: [
+                        { value: 'value3-3-1', label: 'label3-3-1' },
+                        { value: 'value3-3-2', label: 'label3-3-2' },
+                        {
+                            value: 'value3-3-3',
+                            label: 'label3-3-3',
+                            checked: false,
+                            expanded: true,
+                            children: [
+                                {
+                                    value: 'value3-3-3-1',
+                                    label: 'label3-3-3-1',
+                                    checked: false,
+                                    expanded: true,
+                                    children: [
+                                        { value: 'value3-3-3-1-1', label: 'label3-3-3-1-1' },
+                                        { value: 'value3-3-3-1-2', label: 'label3-3-3-1-2' },
+                                        { value: 'value3-3-3-1-3', label: 'label3-3-3-1-3' }
+                                    ]
+                                },
+                                {
+                                    value: 'value3-3-3-2',
+                                    label: 'label3-3-3-2',
+                                    checked: false,
+                                    expanded: true,
+                                    children: [
+                                        { value: 'value3-3-3-2-1', label: 'label3-3-3-2-1' },
+                                        { value: 'value3-3-3-2-2', label: 'label3-3-3-2-2' },
+                                        { value: 'value3-3-3-2-3', label: 'label3-3-3-2-3' }
+                                    ]
+                                },
+                                {
+                                    value: 'value3-3-3-3',
+                                    label: 'label3-3-3-3',
+                                    checked: false,
+                                    expanded: true,
+                                    children: [
+                                        { value: 'value3-3-3-3-1', label: 'label3-3-3-3-1' },
+                                        { value: 'value3-3-3-3-2', label: 'label3-3-3-3-2' },
+                                        { value: 'value3-3-3-3-3', label: 'label3-3-3-3-3' }
+                                    ]
+                                },
+                            ]
+                        }
+                    ]
+                },
+            ]
+        }];
+
+        var app = new Tree({
+            el: '.tree-container',
+            nodes: nodes,
+            checkbox: true,
+            accordion: false,
+            onCheck: function (e) {
+                console.log(app.getChecked());
+            },
+            onExpand: function (e) {
+                console.log(e.target)
+            }
+        });
+    </script>
+</body>
+
+</html>

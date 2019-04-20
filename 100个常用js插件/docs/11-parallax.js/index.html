@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <title>parallax.js</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0,minimal-ui">
+  <meta name="keywords" content="parallax.js">
+  <meta name="description" content="parallax.js">
+  <link rel="stylesheet" href="css/app.css">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="parallax/parallax.css">
+  <link rel="icon" href="favicon.ico">
+</head>
+
+<body>
+  <input class="addblock" type="button" value="动态添加">
+  <input class="destory" type="button" value="销毁实例">
+  <div class="parallaxWrap">
+    <div class="parallax" data-parallax-speed="-10">-10</div>
+    <div class="parallax" data-parallax-speed="-9">-9</div>
+    <div class="parallax" data-parallax-speed="-8">-8</div>
+    <div class="parallax" data-parallax-speed="-7">-7</div>
+    <div class="parallax" data-parallax-speed="-6">-6</div>
+    <div class="parallax" data-parallax-speed="-5">-5</div>
+    <div class="parallax" data-parallax-speed="-4">-4</div>
+    <div class="parallax" data-parallax-speed="-3">-3</div>
+    <div class="parallax" data-parallax-speed="-2">-2</div>
+    <div class="parallax" data-parallax-speed="-1">-1</div>
+    <div class="parallax" data-parallax-speed="0">0</div>
+  </div>
+  <script src="parallax/parallax.js"></script>
+  <script src="js/app.js"></script>
+
+  <!-- 可选用于鼠标滚轮平滑效果 -->
+  <script src="js/SmoothScroll.min.js"></script>
+
+  <script>
+
+    var parallaxDemo = new Parallax('.parallax', {
+      speed: -2,
+      interval: [-10, 10]
+    });
+
+    let index = 0;
+    document.querySelector('.addblock').addEventListener('click', function (e) {
+      if(index++ >= 10) return false;
+      let parallaxWrap = document.querySelector('.parallaxWrap');
+      parallaxWrap.insertAdjacentHTML('beforeend', '<div class="parallax" data-parallax-speed="' + index + '">' + index + '</div>');
+      parallaxDemo.update();
+    })
+
+    document.querySelector('.destory').addEventListener('click', function (e) {
+      parallaxDemo.destory();
+    })
+
+  </script>
+</body>
+
+</html>

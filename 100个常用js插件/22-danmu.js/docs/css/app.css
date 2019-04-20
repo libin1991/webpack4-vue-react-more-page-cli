@@ -1,0 +1,17 @@
+#danmu {
+  position: relative;
+  width: 640px;
+  height: 360px;
+  background: #000;
+  margin: 100px auto 0;
+}
+
+.btn {
+  margin: 50px 0 0;
+  text-align: center;
+}
+
+.btns a {
+  display: inline-block;
+  margin: 0 10px;
+}

@@ -1,0 +1,14 @@
+.__validate__form {
+  label {
+    &.error {
+      color: red;
+      font-style: italic;
+    }
+  }
+
+  input, textarea, select {
+    &.error {
+      border: 1px dotted red;
+    }
+  }
+}

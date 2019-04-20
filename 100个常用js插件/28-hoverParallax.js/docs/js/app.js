@@ -1,0 +1,3 @@
+// consola.creat({
+//   position: 'right'
+// });

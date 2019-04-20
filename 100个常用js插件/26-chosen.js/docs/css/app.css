@@ -1,0 +1,9 @@
+.main{
+    padding: 100px 100px 0;
+    text-align: center;
+}
+
+.main .chosen-container{
+    margin-bottom: 50px;
+    text-align: left;
+}

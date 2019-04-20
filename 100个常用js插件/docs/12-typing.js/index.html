@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <title>Typing.js</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0,minimal-ui">
+  <meta name="keywords" content="Typing.js">
+  <meta name="description" content="Typing.js">
+  <link rel="stylesheet" href="css/app.css">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="typing/typing.css">
+  <link rel="icon" href="favicon.ico">
+</head>
+
+<body>
+
+  <div class="typingWrap">
+    <span class="typingDemo1"></span>
+    <div class="title">《离骚》 屈原</div>
+  </div>
+
+  <div class="typingWrap">
+    <span class="typingDemo2"></span>
+    <div class="title">《琵琶行》 白居易</div>
+  </div>
+
+  <script src="typing/typing.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+    new Typing('.typingDemo1', {
+      strings: ['帝高阳之苗裔兮，朕皇考曰伯庸。', '摄提贞于孟陬兮，惟庚寅吾以降。', '皇览揆余初度兮，肇锡余以嘉名。', '名余曰正则兮，字余曰灵均。', '纷吾既有此内美兮，又重之以修能。'],
+      typeSpeed: 100,
+      backSpeed: 50,
+      startDelay: 500,
+      backDelay: 1000,
+      loop: true,
+      showCursor: true,
+      cursorChar: '|',
+      onFinished: function(a, b) {
+        console.log('结束了', a, b);
+      }
+    });
+
+    new Typing('.typingDemo2', {
+      strings: ['浔阳江头夜送客，枫叶荻花秋瑟瑟。', '主人下马客在船，举酒欲饮无管弦。', '醉不成欢惨将别，别时茫茫江浸月。', '忽闻水上琵琶声，主人忘归客不发。', '寻声暗问弹者谁？琵琶声停欲语迟。']
+    });
+  </script>
+</body>
+
+</html>

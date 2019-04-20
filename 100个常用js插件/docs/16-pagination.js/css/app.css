@@ -1,0 +1,21 @@
+a {
+  color: #007bff;
+  text-decoration: none;
+  background-color: transparent;
+  -webkit-text-decoration-skip: objects
+}
+
+a:hover {
+  color: #0056b3;
+  text-decoration: underline
+}
+
+.paginate-container {
+  margin-top: 100px;
+  margin-bottom: 15px;
+  text-align: center
+}
+
+.paginate-container .pagination {
+  display: inline-block
+}

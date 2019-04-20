@@ -1,0 +1,21 @@
+#mouse-tooltip {
+    position: absolute;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}
+
+.mouse-tooltip {
+    max-width: 300px;
+    font-size: small;
+    padding: 8px 12px;
+    color: #fff;
+    line-height: 1.5;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 5px;
+}
+
+.mouse-tooltip-hidden {
+    display: none !important;
+}

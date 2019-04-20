@@ -1,0 +1,48 @@
+.main {
+    width: 750px;
+    height: 300px;
+    margin: 100px auto 0;
+    position: relative;
+    background: #aebcc9;
+    border: 1px solid #e4e4e4;
+    box-sizing: border-box;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.layer{
+    display: block;
+    position: absolute;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+}
+
+.sun{
+    z-index: 1;
+    top: 10px;
+    left: 40%;
+}
+
+.mountains{
+    z-index: 2;
+    width: 140%;
+    left: -20%;
+    right: 0;
+    bottom: 20px;
+}
+
+.hill{
+    z-index: 3;
+    width: 140%;
+    left: -20%;
+    right: 0;
+    bottom: -20px;
+}
+
+.wood{
+    z-index: 4;
+    width: 160%;
+    left: -30%;
+    right: 0;
+    bottom: -50px;
+}

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <title>Pagination.js</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0,minimal-ui">
+  <meta name="keywords" content="Pagination.js">
+  <meta name="description" content="Pagination.js">
+  <link rel="stylesheet" href="css/app.css">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="pagination/pagination.css">
+  <link rel="icon" href="favicon.ico">
+</head>
+
+<body>
+  <div class="paginate-container"></div>
+  <script src="pagination/pagination.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+    var app = new Pagination('.paginate-container', {
+      current: 25,
+      total: 50,
+      show: 10,
+      previous: 'Previous',
+      next: 'Next',
+      callback: function(e){
+        app.set('current', e.pagination.nextPage);
+        console.log(e.pagination);
+      }
+    });
+  </script>
+</body>
+
+</html>

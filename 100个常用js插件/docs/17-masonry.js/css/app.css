@@ -1,0 +1,12 @@
+.container{
+  max-width: 100%;
+  width: 1200px;
+  margin: 50px auto 500px;
+}
+
+.addBlock{
+  position: fixed;
+  z-index: 10;
+  left: 10px;
+  top: 10px;
+}

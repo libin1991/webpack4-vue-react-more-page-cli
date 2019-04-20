@@ -1,0 +1,32 @@
+.onepage-wrapper{
+  
+}
+
+.onepage-wrapper section{
+    color: #fff;
+    font-size: 50px;
+    font-weight: bold;
+    text-align: center;
+    padding-top: 100px;
+    box-sizing: border-box;
+}
+
+.onepage-wrapper .page1{
+    background: #8981d8;
+}
+
+.onepage-wrapper .page2{
+    background: #43e1a7;
+}
+
+.onepage-wrapper .page3{
+    background: #ff7373;
+}
+
+.onepage-wrapper .page4{
+    background: #4438cc;
+}
+
+.onepage-wrapper .page5{
+    background: #e047a6;
+}

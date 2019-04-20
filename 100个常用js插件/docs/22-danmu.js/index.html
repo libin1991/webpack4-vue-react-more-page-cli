@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <title>danmu.js</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0,minimal-ui">
+    <meta name="keywords" content="danmu.js">
+    <meta name="description" content="danmu.js">
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="danmu/danmu.css">
+    <link rel="icon" href="favicon.ico">
+</head>
+
+<body>
+    <div class="main">
+        <div id="danmu"></div>
+        <div class="btn"><a class="send" href="#">发送</a></div>
+    </div>
+    <script src="danmu/danmu.js"></script>
+    <script src="js/app.js"></script>
+    <script>
+        var app = new Danmu("#danmu", {
+            zIndex: 100,
+            speed: 7000,
+            color: "#FFFFFF",
+            fontSize: [18, 24],
+            opacity: 0.9,
+            safeDistance: [10, 50]
+        });
+
+        app.setDanmu([
+            {
+                text: "这是弹幕1",
+                color: "#fff",
+                border: "red",
+                size: 0,
+                time: 1000,
+                speed: 1000
+            },
+            {
+                text: "这是弹幕2",
+                color: "#999",
+                border: "yellow",
+                size: 1,
+                time: 2000,
+                speed: 2000
+            },
+            {
+                text: "这是弹幕3",
+                color: "#666",
+                border: "green",
+                size: 0,
+                time: 3000,
+                speed: 3000
+            },
+            {
+                text: "这是弹幕4",
+                color: "#333",
+                border: "red",
+                size: 1,
+                time: 4000,
+                speed: 4000
+            },
+            {
+                text: "这是弹幕5",
+                color: "#fff",
+                border: "green",
+                size: 0,
+                time: 5000,
+                speed: 5000
+            }
+        ]);
+
+        app.start();
+        setInterval(() => {
+            app.start();
+        }, 3000);
+
+        let sendEl = document.querySelector('.send');
+        sendEl.addEventListener('click', function (e) {
+            e.preventDefault();
+            var text = prompt("输入弹幕内容：");
+            app.send({
+                text: text || "你输入的是空白！！！",
+                color: "#fff",
+                border: "red",
+                size: 0,
+                speed: 5000
+            }, function (data) {
+                console.log(data);
+            });
+        });
+    </script>
+</body>
+
+</html>

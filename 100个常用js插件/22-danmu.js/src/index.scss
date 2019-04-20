@@ -1,0 +1,23 @@
+.__danmu__{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    width: 100%;
+    overflow: hidden;
+    user-select: none;
+    .__danmu__item{
+        font-family: SimHei, "Microsoft JhengHei", Arial, Helvetica, sans-serif;
+        user-select: none;
+        position: absolute;
+        white-space: pre;
+        pointer-events: none;
+        perspective: 500px;
+        display: inline-block;
+        will-change: transform;
+        font-weight: bold;
+        line-height: 1.125;
+    }
+}

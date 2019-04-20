@@ -1,0 +1,24 @@
+body{
+  background: #F0F0F0;
+  color: #666
+}
+
+.app{
+  width: 500px;
+  margin: 0 auto;
+  font-size: 14px;
+  text-align: center;
+}
+
+.app img{
+  width: 200px;
+  height: 200px;
+  border: 1px solid #AAA;
+}
+
+img.unload{
+  -webkit-filter: blur(5px);
+  -ms-filter: blur(5px);
+  filter: blur(5px);
+  filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius=5,MakeShadow=false);
+}
