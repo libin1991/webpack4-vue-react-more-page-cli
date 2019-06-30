@@ -1,0 +1,37 @@
+{
+	"type": "Program",
+	"body": [
+		{
+			"type": "ImportDeclaration",
+			"specifiers": [
+				{
+					"type": "ImportSpecifier",
+					"local": {
+						"type": "Identifier",
+						"name": "Button"
+					},
+					"imported": {
+						"type": "Identifier",
+						"name": "Button"
+					}
+				}, {
+					"type": "ImportSpecifier",
+					"local": {
+						"type": "Identifier",
+						"name": "Alert"
+					},
+					"imported": {
+						"type": "Identifier",
+						"name": "Alert"
+					}
+				}
+			],
+			"source": {
+				"type": "Literal",
+				"value": "element-ui",
+				"raw": "'element-ui'"
+			}
+		}
+	],
+	"sourceType": "module"
+}

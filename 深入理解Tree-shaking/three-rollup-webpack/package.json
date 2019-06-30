@@ -1,0 +1,34 @@
+{
+  "name": "three-treeshaking-demo",
+  "version": "1.0.0",
+  "description": "three-treeshaking-demo",
+  "private": false,
+  "scripts": {
+    "rollup": "rollup -c",
+    "webpack": "webpack --config webpack.config.js --optimize-minimize"
+  },
+  "dependencies": {
+    "iview": "^2.0.0",
+    "three": "^0.86.0"
+  },
+  "module": "dist.module.js",
+  "devDependencies": {
+    "@ampproject/rollup-plugin-closure-compiler": "^0.9.0",
+    "babel-core": "^6.25.0",
+    "babel-loader": "^7.1.1",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-latest": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "rollup": "^0.45.2",
+    "rollup-plugin-babel": "^2.7.1",
+    "rollup-plugin-commonjs": "^8.0.2",
+    "rollup-plugin-node-resolve": "^3.0.0",
+    "rollup-plugin-uglify": "^2.0.1",
+    "rollup-plugin-uglify-es": "^0.0.1",
+    "standard": "^10.0.2",
+    "uglify-es": "^3.3.9",
+    "uglify-js-harmony": "^2.7.7",
+    "underscore": "^1.8.3",
+    "webpack": "^3.5.0"
+  }
+}

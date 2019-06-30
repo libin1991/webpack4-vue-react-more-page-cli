@@ -1,0 +1,30 @@
+{
+  "name": "ast-lesson",
+  "version": "1.0.0",
+  "description": "tree-staking",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-preset-env": "^1.7.0",
+    "babel-types": "^6.26.0",
+    "escodegen": "^1.10.0",
+    "esprima": "^4.0.0",
+    "estraverse": "^4.2.0",
+    "webpack": "^4.16.0",
+    "webpack-cli": "^3.0.8"
+  },
+  "devDependencies": {
+    "element-ui": "^2.4.6",
+    "findup-sync": "^3.0.0",
+    "import-local": "^2.0.0",
+    "vue": "^2.5.17",
+    "yargs": "^13.2.4"
+  }
+}
