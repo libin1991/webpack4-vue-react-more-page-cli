@@ -1,0 +1,268 @@
+body,
+ul,
+ol,
+dl,
+dd,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+form,
+input,
+button {
+    margin: 0;
+    padding: 0;
+}
+
+body,
+button,
+input,
+textarea {
+    color: #333;
+    font: 14px/1.4 'Helvetica Neue', 'Hiragino Sans GB', 'WenQuanYi Micro Hei', 'Microsoft Yahei', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: normal;
+}
+
+input {
+    outline: 0 none;
+}
+
+img,
+input {
+    border: none;
+}
+
+img {
+    max-width: 100%;
+    vertical-align: top;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+i {
+    font-style: normal;
+}
+
+button,
+input[type="button"],
+input[type='submit'] {
+    cursor: pointer;
+}
+
+a {
+    color: #222;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+a:hover {
+    color: #ec584e;
+}
+
+a:focus,
+button:focus,
+input:focus {
+    outline: 0
+}
+
+//定义各浏览器输入框placeholder的样式（已基本调整一致）
+input:input-placeholder,
+textarea:input-placeholder,
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+    color: #e6e6e6;
+}
+
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder,
+input::-moz-placeholder,
+textarea::-moz-placeholder {
+    color: #999;
+}
+
+//清除谷歌自输入框样式
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 1000px #fff inset;
+}
+
+// 清除ie输入框叉叉与眼睛
+::-ms-clear,
+::-ms-reveal {
+    display: none;
+}
+
+// Correct block display not defined for any HTML5 element in IE 8/9.
+// Correct block display not defined for details or summary in IE 10/11 and Firefox.
+// Correct block display not defined for main in IE 11.
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section,
+summary {
+    display: block;
+}
+
+// 1. Correct inline-block display not defined in IE 9-.
+audio,
+canvas,
+progress,
+video {
+    display: inline-block; // 1
+}
+
+
+.clearfix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+// /居中/ 
+.m0a {
+    margin-right: auto;
+    margin-left: auto;
+}
+// /换行/ 
+.wbb {
+    word-break: break-all;
+    word-wrap: break-word;
+}
+// / 单行文字溢出虚点显 示/
+ .ell {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+// / 加载中背景图片/ 
+.loading {
+    // background: url("spinner.gif") no-repeat center;
+}
+// /字间隔/
+ .ls3 {
+    letter-spacing: 3px;
+}
+// /黑色透明背景/ 
+.bgop {
+    opacity: .5;
+    background: #000;
+    -moz-opacity: .50;
+    filter: alpha(opacity=50)
+}
+
+.zi1 {
+    z-index: 1;
+}
+// /wrap/ 
+.w1180 {
+    max-width: 1180px;
+    margin: 0 auto;
+}
+
+// triangle 三角箭头
+// 可采用空元素或伪元素生成，具体定位这里不涉及
+%triangle-basic {
+    position: absolute;
+    content: "";
+    height: 0;
+    width: 0;
+    line-height: 0;
+    overflow: hidden;
+}
+
+@mixin triangle($direction: top, $borderWidth: 6px, $borderColor: #ccc) {
+    @extend %triangle-basic;
+
+    @if $direction==top {
+        border-top: $borderWidth solid $borderColor;
+        border-left: $borderWidth dashed transparent;
+        border-right: $borderWidth dashed transparent;
+    }
+
+    @else if $direction==right {
+        border-right: $borderWidth solid $borderColor;
+        border-top: $borderWidth dashed transparent;
+        border-bottom: $borderWidth dashed transparent;
+    }
+
+    @else if $direction==bottom {
+        border-bottom: $borderWidth solid $borderColor;
+        border-left: $borderWidth dashed transparent;
+        border-right: $borderWidth dashed transparent;
+    }
+
+    @else if $direction==left {
+        border-left: $borderWidth solid $borderColor;
+        border-top: $borderWidth dashed transparent;
+        border-bottom: $borderWidth dashed transparent;
+    }
+}
+
+//设置按钮
+@mixin btn($fontSize: 16px, $color: #fff, $bgColor: #ec5845) {
+    position: relative;
+    display: block;
+    padding-left: 10px;
+    padding-right: 10px;
+    box-sizing: border-box;
+    font-size: $fontSize;
+    text-align: center;
+    line-height: 2.33333333;
+    border-radius: 5px;
+    overflow: hidden;
+    color: $color;
+    background: #ec5845;
+
+}
+
+//单行隐藏
+@mixin ell {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis
+}
+
+// transition
+@mixin tran {
+    -webkit-transition: all .8s ease;
+    -moz-transition: all .8s ease;
+    -ms-transition: all .8s ease;
+    -o-transition: all .8s ease;
+    transition: all .8s ease;
+}
+
+@mixin flex {
+    display: -webkit-box; //旧语法
+    display: -webkit-flex; //新语法
+    display: flex;
+    flex-direction: row;
+}
+
+@mixin bg {
+    background: rgba(0, 0, 0, 0.3);
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr='#30000000', endColorstr='#30000000')\9;
+}
