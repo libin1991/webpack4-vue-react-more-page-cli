@@ -24,7 +24,7 @@
     "npm": "node build/webpack.npm.conf.js"
   },
   "dependencies": {
-    "vant": "^1.4.8",
+    "vant": "^2.1.8",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1"
   },
